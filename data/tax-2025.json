@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "taxYear": 2025,
+    "filingYear": 2026,
+    "filingDeadline": "April 15, 2026",
+    "extensionDeadline": "October 15, 2026",
+    "lastUpdated": "2025-07-04",
+    "majorLegislation": "One Big Beautiful Bill (OBBB)",
+    "legislationDate": "July 4, 2025",
+    "version": "2.0.0"
+  },
+
+  "standardDeductions": {
+    "single": 15750,
+    "marriedFilingJointly": 31500,
+    "marriedFilingSeparately": 15750,
+    "headOfHousehold": 23625,
+    "over65Bonus": 2000,
+    "blindBonus": 2000,
+    "seniorBonus": { "amount": 6000, "phaseoutSingle": 75000, "phaseoutMFJ": 150000, "note": "New OBBB senior deduction for age 65+" }
+  },
+
+  "brackets": {
+    "single": [
+      { "rate": 0.10, "min": 0, "max": 11925 },
+      { "rate": 0.12, "min": 11925, "max": 48475 },
+      { "rate": 0.22, "min": 48475, "max": 103350 },
+      { "rate": 0.24, "min": 103350, "max": 197300 },
+      { "rate": 0.32, "min": 197300, "max": 250525 },
+      { "rate": 0.35, "min": 250525, "max": 626350 },
+      { "rate": 0.37, "min": 626350, "max": null }
+    ],
+    "marriedFilingJointly": [
+      { "rate": 0.10, "min": 0, "max": 23850 },
+      { "rate": 0.12, "min": 23850, "max": 96950 },
+      { "rate": 0.22, "min": 96950, "max": 206700 },
+      { "rate": 0.24, "min": 206700, "max": 394600 },
+      { "rate": 0.32, "min": 394600, "max": 501050 },
+      { "rate": 0.35, "min": 501050, "max": 751600 },
+      { "rate": 0.37, "min": 751600, "max": null }
+    ],
+    "marriedFilingSeparately": [
+      { "rate": 0.10, "min": 0, "max": 11925 },
+      { "rate": 0.12, "min": 11925, "max": 48475 },
+      { "rate": 0.22, "min": 48475, "max": 103350 },
+      { "rate": 0.24, "min": 103350, "max": 197300 },
+      { "rate": 0.32, "min": 197300, "max": 250525 },
+      { "rate": 0.35, "min": 250525, "max": 375800 },
+      { "rate": 0.37, "min": 375800, "max": null }
+    ],
+    "headOfHousehold": [
+      { "rate": 0.10, "min": 0, "max": 17000 },
+      { "rate": 0.12, "min": 17000, "max": 64850 },
+      { "rate": 0.22, "min": 64850, "max": 103350 },
+      { "rate": 0.24, "min": 103350, "max": 197300 },
+      { "rate": 0.32, "min": 197300, "max": 250500 },
+      { "rate": 0.35, "min": 250500, "max": 626350 },
+      { "rate": 0.37, "min": 626350, "max": null }
+    ]
+  },
+
+  "capitalGains": {
+    "shortTerm": "Taxed at ordinary income rates",
+    "longTerm": {
+      "rate0": { "single": 48350, "marriedFilingJointly": 96700, "headOfHousehold": 64750 },
+      "rate15": { "single": 533400, "marriedFilingJointly": 600050, "headOfHousehold": 566700 },
+      "rate20": "Above 15% threshold"
+    },
+    "collectibles": 0.28,
+    "unrecaptured1250": 0.25,
+    "niit": { "rate": 0.038, "thresholdSingle": 200000, "thresholdMFJ": 250000 }
+  },
+
+  "selfEmployment": {
+    "seTaxRate": 0.153,
+    "socialSecurityWageBase": 176100,
+    "socialSecurityRate": 0.124,
+    "medicareRate": 0.029,
+    "additionalMedicareThresholdSingle": 200000,
+    "additionalMedicareThresholdMFJ": 250000,
+    "additionalMedicareRate": 0.009,
+    "mileageRate": 0.70,
+    "mileageMedical": 0.21,
+    "mileageCharity": 0.14,
+    "qbiDeductionRate": 0.20,
+    "qbiPhaseoutSingle": 197300,
+    "qbiPhaseoutMFJ": 394600,
+    "section179Limit": 1250000,
+    "section179PhaseoutStart": 3130000
+  },
+
+  "retirement": {
+    "k401Limit": 23500,
+    "k401CatchUp50Plus": 7500,
+    "k401SuperCatchUp60to63": 11250,
+    "k403bLimit": 23500,
+    "iraLimit": 7000,
+    "iraCatchUp50Plus": 1000,
+    "sepIraMaxContribution": 70000,
+    "solo401kEmployeeLimit": 23500,
+    "solo401kTotalLimit": 70000,
+    "simpleIraLimit": 16500,
+    "simpleIraCatchUp": 3500,
+    "rothPhaseout": {
+      "singleStart": 150000, "singleEnd": 165000,
+      "mfjStart": 236000, "mfjEnd": 246000
+    },
+    "traditionalIraDeductionPhaseout": {
+      "singleWithPlanStart": 79000, "singleWithPlanEnd": 89000,
+      "mfjWithPlanStart": 126000, "mfjWithPlanEnd": 146000,
+      "mfjSpouseOnlyStart": 236000, "mfjSpouseOnlyEnd": 246000
+    },
+    "hsa": {
+      "individual": 4300, "family": 8550, "catchUp55Plus": 1000,
+      "note": "Must have HDHP. Min deductible: $1,650 individual / $3,300 family"
+    }
+  },
+
+  "credits": {
+    "childTaxCredit": { "amount": 2200, "refundable": 1700, "ageLimit": 17, "phaseoutSingle": 200000, "phaseoutMFJ": 400000 },
+    "eitc": {
+      "max3Children": 8046, "max2Children": 7152, "max1Child": 4328, "maxNoChildren": 649,
+      "investmentIncomeLimit": 11950
+    },
+    "americanOpportunity": { "max": 2500, "refundable": 1000, "years": 4, "mfjPhaseout": 180000 },
+    "lifetimeLearning": { "max": 2000, "mfjPhaseout": 180000 },
+    "childDependentCare": { "max1": 3000, "max2Plus": 6000, "maxRate": 0.35 },
+    "saversCredit": { "phaseoutSingle": 39500, "phaseoutMFJ": 79000, "phaseoutHOH": 59250 },
+    "evCredit": { "maxNew": 7500, "maxUsed": 4000, "note": "Must meet assembly and mineral requirements" },
+    "energyEfficient": { "maxAnnual": 3200, "note": "Insulation, windows, HVAC, heat pumps, etc." },
+    "adoptionCredit": { "max": 17280 },
+    "foreignTaxCredit": { "note": "Dollar-for-dollar credit for foreign taxes paid; Form 1116" }
+  },
+
+  "amt": {
+    "exemptionSingle": 88100,
+    "exemptionMFJ": 137000,
+    "phaseoutSingle": 626350,
+    "phaseoutMFJ": 1252700,
+    "rate26Pct": 248300,
+    "rate28Pct": "Above 26% threshold"
+  },
+
+  "saltCap": {
+    "amount": 40000,
+    "years": "2025-2029",
+    "revertAmount": 10000,
+    "revertYear": 2030,
+    "note": "OBBB raised from $10,000. Includes property tax, state income/sales tax."
+  },
+
+  "giftEstate": {
+    "annualGiftExclusion": 19000,
+    "lifetimeExemption": 13990000,
+    "estateExemption2026": 15000000,
+    "topRate": 0.40,
+    "note": "OBBB increases estate exemption to $15M/individual in 2026"
+  },
+
+  "penalties": {
+    "failureToFile": "5% per month up to 25% of unpaid tax",
+    "failureToFileFraud": "15% per month up to 75%",
+    "failureToPay": "0.5% per month up to 25%",
+    "estimatedTaxPenalty": "Underpayment rate × days late (currently ~8%)",
+    "accuracyRelated": "20% of underpayment (negligence or substantial understatement)",
+    "fraud": "75% of underpayment"
+  },
+
+  "deadlines": [
+    { "date": "2026-01-15", "label": "Jan 15", "desc": "Q4 2025 estimated tax due", "icon": "💰" },
+    { "date": "2026-01-31", "label": "Jan 31", "desc": "W-2s / 1099s mailed to recipients", "icon": "📬" },
+    { "date": "2026-03-15", "label": "Mar 15", "desc": "Partnership (1065) & S-Corp (1120-S) returns due", "icon": "🏢" },
+    { "date": "2026-04-15", "label": "Apr 15", "desc": "Individual (1040) & C-Corp (1120) returns due", "icon": "📋" },
+    { "date": "2026-04-15", "label": "Apr 15", "desc": "IRA/Roth contributions deadline for TY2025", "icon": "🏦" },
+    { "date": "2026-04-15", "label": "Apr 15", "desc": "Extension request (Form 4868) deadline", "icon": "📎" },
+    { "date": "2026-04-15", "label": "Apr 15", "desc": "Q1 2026 estimated tax due", "icon": "💰" },
+    { "date": "2026-06-16", "label": "Jun 16", "desc": "Q2 2026 estimated tax due", "icon": "💰" },
+    { "date": "2026-06-16", "label": "Jun 16", "desc": "US citizens abroad filing deadline", "icon": "🌍" },
+    { "date": "2026-09-15", "label": "Sep 15", "desc": "Extended partnership/S-Corp returns due", "icon": "🏢" },
+    { "date": "2026-09-15", "label": "Sep 15", "desc": "Q3 2026 estimated tax due", "icon": "💰" },
+    { "date": "2026-10-15", "label": "Oct 15", "desc": "Extended individual/C-Corp returns due", "icon": "📋" },
+    { "date": "2026-12-31", "label": "Dec 31", "desc": "Year-end tax planning deadline", "icon": "📊" }
+  ],
+
+  "obbbChanges": [
+    { "title": "Higher Standard Deductions", "detail": "$15,750 single / $31,500 MFJ (up from $14,600/$29,200)", "icon": "📈", "impact": "high" },
+    { "title": "Child Tax Credit → $2,200", "detail": "Permanently increased from $2,000; refundable portion $1,700", "icon": "👶", "impact": "high" },
+    { "title": "SALT Cap → $40,000", "detail": "Raised from $10,000 for 2025-2029; reverts in 2030", "icon": "🏠", "impact": "high" },
+    { "title": "No Tax on Tips", "detail": "Up to $25,000 for qualifying service industry workers; FICA still applies", "icon": "💵", "impact": "medium" },
+    { "title": "No Tax on Overtime", "detail": "Federal income tax excluded on FLSA overtime; payroll taxes still apply", "icon": "⏰", "impact": "medium" },
+    { "title": "Senior Deduction $6,000", "detail": "Above-the-line for age 65+; phases out at $75K single / $150K MFJ", "icon": "👴", "impact": "medium" },
+    { "title": "§199A Made Permanent", "detail": "20% QBI deduction for pass-throughs now permanent (was expiring 2025)", "icon": "📊", "impact": "high" },
+    { "title": "Car Loan Interest Deductible", "detail": "Up to $10,000 on US-assembled vehicles purchased 2025+", "icon": "🚗", "impact": "medium" },
+    { "title": "TCJA Rates Permanent", "detail": "Seven brackets (10%-37%) made permanent; no sunset", "icon": "⚖️", "impact": "high" },
+    { "title": "Estate Exemption → $15M", "detail": "$15M per individual starting 2026; up from $13.99M", "icon": "🏛️", "impact": "medium" }
+  ],
+
+  "stateInfo": {
+    "noIncomeTax": ["AK", "FL", "NV", "NH", "SD", "TN", "TX", "WA", "WY"],
+    "flatTax": { "CO": 4.4, "IL": 4.95, "IN": 3.05, "KY": 4.0, "MA": 5.0, "MI": 4.25, "NC": 4.5, "PA": 3.07, "UT": 4.65 },
+    "highestRates": { "CA": 13.3, "HI": 11.0, "NJ": 10.75, "OR": 9.9, "MN": 9.85, "NY": 10.9, "DC": 10.75 },
+    "pteElectionStates": 36,
+    "note": "36 states + DC offer PTE election as SALT cap workaround for pass-through entities"
+  },
+
+  "downloads": [
+    { "id": "basis-worksheet", "title": "Partnership Basis Worksheet", "desc": "IRC §705 basis tracking for 5 years with at-risk (§465) and liability (§752) schedules", "file": "Partnership_Basis_Worksheet_Template.xlsx", "icon": "📊" },
+    { "id": "asc740-provision", "title": "ASC 740 Tax Provision Workbook", "desc": "Current/deferred tax, DTA/DTL roll-forward, ETR reconciliation, VA analysis", "file": "ASC740_Tax_Provision_Template.xlsx", "icon": "📋" },
+    { "id": "tax-research-memo", "title": "Tax Research Memo Template", "desc": "Professional memo format with issue, analysis, conclusion, and authority hierarchy", "file": "Tax_Research_Memo_Template.docx", "icon": "📝" },
+    { "id": "audit-response", "title": "IRS Audit Response Template", "desc": "Structured response letter for IRS notices and examination correspondence", "file": "IRS_Audit_Response_Template.docx", "icon": "🔍" },
+    { "id": "penalty-abatement", "title": "Penalty Abatement Request", "desc": "First-time penalty abatement and reasonable cause request letters", "file": "Penalty_Abatement_Template.docx", "icon": "⚖️" }
+  ]
+}

@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TaxClarity — Taxes, Finally Made Clear</title>
+<meta name="description" content="Free tax education for Tax Year 2025. Interactive calculators, AI research agent, partnership basis worksheets, ASC 740 templates, and guides for individuals, businesses, and international students. Updated for OBBB."/>
+<meta name="keywords" content="tax calculator 2025, OBBB tax changes, partnership basis worksheet, ASC 740 provision, S-Corp K-1, international student taxes, tax research"/>
+<meta property="og:title" content="TaxClarity — Taxes, Finally Made Clear"/>
+<meta property="og:description" content="Free tax tools, calculators, templates, and AI-powered tax research for Tax Year 2025. Updated for the One Big Beautiful Bill."/>
+<meta property="og:type" content="website"/>
+<link rel="canonical" href="https://clearfinance.onrender.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/css/main.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">⚖</div>
+      Tax<span>Clarity</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#taxes">📋 Taxes</a></li>
+      <li><a href="#business">🏢 Business</a></li>
+      <li><a href="#calculator">🧮 Calculator</a></li>
+      <li><a href="#planning">💰 Planning</a></li>
+      <li><a href="#audit">🔍 IRS & Audit</a></li>
+      <li><a href="#international">🌍 Intl.</a></li>
+      <li><a href="#ai-career">⚖ AI in Tax</a></li>
+      <li><a href="#downloads">📥 Templates</a></li>
+      <li><a href="#agent" class="agent-link">✦ AI Research Agent</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#taxes" onclick="toggleMobile()">📋 Taxes</a>
+    <a href="#business" onclick="toggleMobile()">🏢 Business Taxes</a>
+    <a href="#calculator" onclick="toggleMobile()">🧮 Tax Calculator</a>
+    <a href="#planning" onclick="toggleMobile()">💰 Financial Planning</a>
+    <a href="#audit" onclick="toggleMobile()">🔍 IRS & Audit</a>
+    <a href="#international" onclick="toggleMobile()">🌍 International Students</a>
+    <a href="#downloads" onclick="toggleMobile()">📥 Templates & Downloads</a>
+    <a href="#news" onclick="toggleMobile()">📰 News</a>
+    <a href="#ai-career" onclick="toggleMobile()">⚖ AI in Tax</a>
+    <a href="#agent" onclick="toggleMobile()" style="color:var(--gold2);font-weight:600">✦ AI Research Agent</a>
+  </div>
+</nav>
+
+<!-- NEWS TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner" id="ticker">
+    <span class="ticker-item">🆕 <strong>2025 Tax Year</strong> — Standard deduction: $15,750 single / $31,500 married</span>
+    <span class="ticker-item">📅 <strong>April 15, 2026</strong> — 2025 federal return filing deadline</span>
+    <span class="ticker-item">💰 <strong>SALT Cap</strong> — Raised to $40,000 for 2025–2029 under OBBB</span>
+    <span class="ticker-item">🚫 <strong>No Tax on Tips</strong> — New for qualifying service workers in 2025</span>
+    <span class="ticker-item">📈 <strong>401(k)</strong> — Contribution limit: $23,500 for 2025</span>
+    <span class="ticker-item">👴 <strong>Super Catch-Up</strong> — Ages 60–63 can contribute extra $11,250 to 401(k)</span>
+    <span class="ticker-item">🎁 <strong>Child Tax Credit</strong> — Increased to $2,200 per qualifying child</span>
+    <span class="ticker-item">🏠 <strong>Car Loan Interest</strong> — Now deductible up to $10,000 on US-made vehicles</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-badge">✦ Tax Year 2025 · Filed April 15, 2026</div>
+      <h1>Taxes,<br/><em>Finally Made Clear</em></h1>
+      <p class="hero-sub">No jargon. No confusion. 4 interactive calculators, 5 free templates, an AI Research Agent, and expert-level guides — for everyone.</p>
+      <div class="hero-btns">
+        <a href="#calculator" class="btn-gold">🧮 Tax Calculators</a>
+        <a href="#agent" class="btn-ghost">✦ AI Research Agent</a>
+        <a href="#downloads" class="btn-ghost">📥 Free Templates</a>
+      </div>
+      <div class="countdown-wrap">
+        <div class="countdown-label">⏰ Filing Deadline</div>
+        <div id="countdown-text"></div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-stats">
+        <div class="stat-card"><div class="stat-num stat-animate" data-value="15750" data-prefix="$">$0</div><div class="stat-label">Std. Deduction Single</div></div>
+        <div class="stat-card"><div class="stat-num stat-animate" data-value="31500" data-prefix="$">$0</div><div class="stat-label">Std. Deduction MFJ</div></div>
+        <div class="stat-card"><div class="stat-num stat-animate" data-value="23500" data-prefix="$">$0</div><div class="stat-label">401(k) Limit 2025</div></div>
+        <div class="stat-card"><div class="stat-num stat-animate" data-value="2200" data-prefix="$">$0</div><div class="stat-label">Child Tax Credit</div></div>
+        <div class="stat-card"><div class="stat-num stat-animate" data-value="40000" data-prefix="$">$0</div><div class="stat-label">SALT Cap (OBBB)</div></div>
+        <div class="stat-card"><div class="stat-num stat-animate" data-value="7000" data-prefix="$">$0</div><div class="stat-label">IRA Limit 2025</div></div>
+      </div>
+      <div style="margin-top:20px">
+        <div style="font-size:12px;color:#78909c;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">What's your situation?</div>
+        <div class="situation-grid">
+          <div class="sit-btn" onclick="showSituation('employee')"><span class="sit-icon">💼</span>W-2 Employee</div>
+          <div class="sit-btn" onclick="showSituation('selfemployed')"><span class="sit-icon">🧑‍💻</span>Self-Employed</div>
+          <div class="sit-btn" onclick="showSituation('investor')"><span class="sit-icon">📈</span>Investor</div>
+          <div class="sit-btn" onclick="showSituation('business')"><span class="sit-icon">🏢</span>Business Owner</div>
+          <div class="sit-btn" onclick="showSituation('international')"><span class="sit-icon">🌍</span>International</div>
+          <div class="sit-btn" onclick="showSituation('audit')"><span class="sit-icon">📬</span>Got IRS Letter</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK NAV -->
+<div class="quick-nav">
+  <div class="quick-grid">
+    <a class="quick-card" href="#taxes"><div class="quick-icon">📋</div><div class="quick-label">Filing Basics</div></a>
+    <a class="quick-card" href="#business"><div class="quick-icon">🏢</div><div class="quick-label">Business Tax</div></a>
+    <a class="quick-card" href="#calculator"><div class="quick-icon">🧮</div><div class="quick-label">Tax Calculator</div></a>
+    <a class="quick-card" href="#planning"><div class="quick-icon">💰</div><div class="quick-label">Save & Invest</div></a>
+    <a class="quick-card" href="#audit"><div class="quick-icon">🔍</div><div class="quick-label">IRS & Audits</div></a>
+    <a class="quick-card" href="#international"><div class="quick-icon">🌍</div><div class="quick-label">Intl. Students</div></a>
+    <a class="quick-card" href="#downloads"><div class="quick-icon">📥</div><div class="quick-label">Templates</div></a>
+    <a class="quick-card agent-quick" href="#agent"><div class="quick-icon">✦</div><div class="quick-label">AI Agent</div></a>
+  </div>
+</div>
+
+<!-- DEADLINES -->
+<div class="deadline-bar">
+  <div class="deadline-inner">
+    <div class="deadline-title">📅 2025 Tax Year Key Deadlines</div>
+    <div class="deadlines">
+      <div class="dl-item"><span class="dl-date">Jan 15, 2026</span><span class="dl-desc">Q4 2025 estimated tax</span></div>
+      <div class="dl-item"><span class="dl-date">Apr 15, 2026</span><span class="dl-desc">2025 federal return due</span></div>
+      <div class="dl-item"><span class="dl-date">Apr 15, 2026</span><span class="dl-desc">Extension request + IRA contributions</span></div>
+      <div class="dl-item"><span class="dl-date">Jun 16, 2026</span><span class="dl-desc">Q2 2026 estimated tax</span></div>
+      <div class="dl-item"><span class="dl-date">Oct 15, 2026</span><span class="dl-desc">Extended returns due</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- OBBB NEW LAW BANNER -->
+<div class="obbb-banner">
+  <div class="obbb-inner">
+    <span class="obbb-tag">🆕 New Law 2025</span>
+    <p class="obbb-text"><strong>One Big Beautiful Bill (OBBB) signed July 4, 2025:</strong> Standard deduction raised · Child Tax Credit → $2,200 · SALT cap → $40,000 · No tax on tips · No tax on overtime · Senior bonus $6,000 · Car loan interest restored · TCJA rates made permanent.</p>
+  </div>
+</div>
+
+<!-- ══════════════════ TAXES ══════════════════ -->
+<section id="taxes">
+  <div class="section-inner">
+    <div class="section-tag">📋 Tax Year 2025</div>
+    <h2 class="section-title">Understanding Your 2025 Taxes</h2>
+    <p class="section-sub">Everything you need to file your 2025 return confidently by April 15, 2026 — documents, deductions, brackets, and more.</p>
+
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab('filing',this)">Filing 101</button>
+      <button class="tab-btn" onclick="switchTab('deductions',this)">Deductions & Credits</button>
+      <button class="tab-btn" onclick="switchTab('brackets',this)">2025 Tax Brackets</button>
+      <button class="tab-btn" onclick="switchTab('newlaws',this)">🆕 2025 New Laws</button>
+      <button class="tab-btn" onclick="switchTab('selfemployed',this)">Self-Employed</button>
+      <button class="tab-btn" onclick="switchTab('refund',this)">Refunds</button>
+    </div>
+
+    <div class="tab-panel active" id="tab-filing">
+      <div class="tip info"><div class="tip-icon">💡</div><p><strong>What is a tax return?</strong> A form you send to the IRS each year reporting how much you earned in 2025. You calculate if you owe more taxes — or deserve money back (a refund). Deadline: <strong>April 15, 2026.</strong></p></div>
+      <div class="card-grid g3" style="margin-top:24px">
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">📄</div><h3>Documents You Need</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>W-2 from your employer (wages earned in 2025)</li>
+            <li><span class="ci">✓</span>1099 forms (freelance, interest, dividends, crypto)</li>
+            <li><span class="ci">✓</span>SSN or ITIN for each person on return</li>
+            <li><span class="ci">✓</span>1095-A if you had Marketplace health insurance</li>
+            <li><span class="ci">✓</span>Bank account info for direct deposit refund</li>
+            <li><span class="ci">✓</span>Receipts for deductible business/medical expenses</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-gold">🖥️</div><h3>How to File for 2025</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>IRS Free File</strong> — Free if income under $84,000</li>
+            <li><span class="ci">✓</span><strong>IRS Direct File</strong> — Now available in 25 states</li>
+            <li><span class="ci">✓</span><strong>Tax software</strong> — TurboTax, H&R Block, TaxAct</li>
+            <li><span class="ci">✓</span><strong>VITA</strong> — Free IRS help if income under $67,000</li>
+            <li><span class="ci">✓</span><strong>CPA / Enrolled Agent</strong> — Complex situations</li>
+            <li><span class="ci">✓</span><strong>Sprintax</strong> — For nonresident international filers</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-navy">👤</div><h3>Choosing Your Filing Status</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>Single</strong> — Unmarried or legally separated</li>
+            <li><span class="ci">✓</span><strong>Married Filing Jointly</strong> — Usually the best option</li>
+            <li><span class="ci">✓</span><strong>Married Filing Separately</strong> — Sometimes better</li>
+            <li><span class="ci">✓</span><strong>Head of Household</strong> — Single + dependent child</li>
+            <li><span class="ci">✓</span><strong>Qualifying Surviving Spouse</strong> — 2 yrs after spouse's death</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip warn" style="margin-top:24px"><div class="tip-icon">⚠️</div><p><strong>Missed the deadline?</strong> File immediately even if you can't pay in full. The penalty for not filing (5%/month) is 10x worse than the penalty for not paying (0.5%/month). Request an extension by April 15, 2026 using Form 4868 — this gives you until October 15, 2026 to file, but NOT to pay.</p></div>
+    </div>
+
+    <div class="tab-panel" id="tab-deductions">
+      <div class="tip info"><div class="tip-icon">💡</div><p><strong>Deduction vs. Credit:</strong> A deduction reduces your taxable income. A credit reduces your actual tax bill dollar-for-dollar. Credits are almost always better. A $1,000 credit saves exactly $1,000. A $1,000 deduction saves $220 if you're in the 22% bracket.</p></div>
+      <div class="card-grid g2" style="margin-top:24px">
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">🏠</div><h3>2025 Standard Deduction</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Single: <strong>$15,750</strong> (up from $14,600 in 2024)</li>
+            <li><span class="ci">✓</span>Married Filing Jointly: <strong>$31,500</strong></li>
+            <li><span class="ci">✓</span>Head of Household: <strong>$23,625</strong></li>
+            <li><span class="ci">✓</span>MFS: <strong>$15,750</strong></li>
+            <li><span class="ci">✓</span>Over 65 or blind: add <strong>$2,000</strong> per qualifying condition</li>
+          </ul>
+          <div class="tip new" style="margin-top:14px"><div class="tip-icon">🆕</div><p>Increased by the One Big Beautiful Bill (OBBB) signed July 4, 2025</p></div>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-gold">📝</div><h3>Itemized Deductions (2025)</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Mortgage interest (Form 1098)</li>
+            <li><span class="ci">✓</span><strong>SALT deduction — NOW up to $40,000</strong> (raised by OBBB)</li>
+            <li><span class="ci">✓</span>Charitable donations (keep all receipts)</li>
+            <li><span class="ci">✓</span>Medical expenses over 7.5% of AGI</li>
+            <li><span class="ci">✓</span>Casualty losses from federally declared disasters</li>
+            <li><span class="ci">✓</span><strong>Car loan interest</strong> — up to $10,000 on US-made vehicles (new!)</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-green">💳</div><h3>2025 Tax Credits</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Child Tax Credit: <strong>$2,200</strong> per child (raised from $2,000)</li>
+            <li><span class="ci">✓</span>EITC max (3+ children): <strong>$8,046</strong></li>
+            <li><span class="ci">✓</span>American Opportunity Credit: <strong>$2,500</strong></li>
+            <li><span class="ci">✓</span>Child & Dependent Care: up to <strong>$6,000</strong></li>
+            <li><span class="ci">✓</span>Saver's Credit: up to $1,000 (single) / $2,000 (MFJ)</li>
+            <li><span class="ci">✓</span>EV Credit: up to $7,500 for qualifying new vehicles</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">⚖</div><h3>Above-the-Line Deductions</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Student loan interest: up to <strong>$2,500</strong></li>
+            <li><span class="ci">✓</span>Traditional IRA contributions: up to <strong>$7,000</strong></li>
+            <li><span class="ci">✓</span>HSA contributions: <strong>$4,300</strong> single / <strong>$8,550</strong> family</li>
+            <li><span class="ci">✓</span>Self-employment health insurance premiums</li>
+            <li><span class="ci">✓</span>Half of self-employment tax paid</li>
+            <li><span class="ci">✓</span>Teacher/educator expenses: up to <strong>$300</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-brackets">
+      <div class="tip info"><div class="tip-icon">💡</div><p><strong>How brackets really work:</strong> The US has a progressive tax system. You pay 10% only on the first $11,925, 12% only on the next dollars up to $48,475, and so on. You never pay your top rate on all your income — only on the portion that falls in each bracket.</p></div>
+      <div style="margin-top:24px">
+        <h3 style="font-family:'Playfair Display',serif;font-size:21px;color:var(--navy);margin-bottom:14px">2025 Brackets — Single Filers (Filed April 15, 2026)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Rate</th><th>Taxable Income Range</th><th>Tax on This Portion</th></tr></thead>
+            <tbody>
+              <tr><td><span class="rate-badge r-low">10%</span></td><td>$0 – $11,925</td><td>10% of the amount over $0</td></tr>
+              <tr><td><span class="rate-badge r-low">12%</span></td><td>$11,926 – $48,475</td><td>$1,192.50 + 12% over $11,925</td></tr>
+              <tr><td><span class="rate-badge r-mid">22%</span></td><td>$48,476 – $103,350</td><td>$5,578.50 + 22% over $48,475</td></tr>
+              <tr><td><span class="rate-badge r-mid">24%</span></td><td>$103,351 – $197,300</td><td>$17,651.50 + 24% over $103,350</td></tr>
+              <tr><td><span class="rate-badge r-mid">32%</span></td><td>$197,301 – $250,525</td><td>$40,199.50 + 32% over $197,300</td></tr>
+              <tr><td><span class="rate-badge r-high">35%</span></td><td>$250,526 – $626,350</td><td>$57,231 + 35% over $250,525</td></tr>
+              <tr><td><span class="rate-badge r-high">37%</span></td><td>Over $626,350</td><td>$188,769.75 + 37% over $626,350</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:21px;color:var(--navy);margin:28px 0 14px">2025 Brackets — Married Filing Jointly</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Rate</th><th>Taxable Income Range</th><th>Tax on This Portion</th></tr></thead>
+            <tbody>
+              <tr><td><span class="rate-badge r-low">10%</span></td><td>$0 – $23,850</td><td>10% of the amount over $0</td></tr>
+              <tr><td><span class="rate-badge r-low">12%</span></td><td>$23,851 – $96,950</td><td>$2,385 + 12% over $23,850</td></tr>
+              <tr><td><span class="rate-badge r-mid">22%</span></td><td>$96,951 – $206,700</td><td>$11,157 + 22% over $96,950</td></tr>
+              <tr><td><span class="rate-badge r-mid">24%</span></td><td>$206,701 – $394,600</td><td>$35,302 + 24% over $206,700</td></tr>
+              <tr><td><span class="rate-badge r-mid">32%</span></td><td>$394,601 – $501,050</td><td>$80,398 + 32% over $394,600</td></tr>
+              <tr><td><span class="rate-badge r-high">35%</span></td><td>$501,051 – $751,600</td><td>$114,462 + 35% over $501,050</td></tr>
+              <tr><td><span class="rate-badge r-high">37%</span></td><td>Over $751,600</td><td>$202,154.50 + 37% over $751,600</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:21px;color:var(--navy);margin:28px 0 14px">2025 Long-Term Capital Gains Rates</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Rate</th><th>Single Income</th><th>Married Filing Jointly</th></tr></thead>
+            <tbody>
+              <tr><td><span class="rate-badge r-low">0%</span></td><td>Up to $48,350</td><td>Up to $96,700</td></tr>
+              <tr><td><span class="rate-badge r-mid">15%</span></td><td>$48,351 – $533,400</td><td>$96,701 – $600,050</td></tr>
+              <tr><td><span class="rate-badge r-high">20%</span></td><td>Over $533,400</td><td>Over $600,050</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip warn" style="margin-top:16px"><div class="tip-icon">💡</div><p>Net Investment Income Tax (NIIT) of <strong>3.8%</strong> applies on top of these rates for income above $200,000 (single) or $250,000 (married).</p></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-newlaws">
+      <div class="tip new"><div class="tip-icon">🆕</div><p><strong>One Big Beautiful Bill (OBBB)</strong> — Signed into law July 4, 2025. This legislation permanently extended TCJA provisions and added several new tax benefits. Here's what changed for <strong>Tax Year 2025</strong>:</p></div>
+      <div class="card-grid g2" style="margin-top:24px">
+        <div class="info-card reveal" style="border-top:3px solid var(--green2)">
+          <div class="card-icon ic-green">📈</div><h3>Higher Standard Deductions</h3>
+          <p>The standard deduction increased significantly: <strong>$15,750 single</strong> (up from $14,600), <strong>$31,500 married</strong> (up from $29,200). This means more income is shielded from tax for most Americans.</p>
+        </div>
+        <div class="info-card reveal" style="border-top:3px solid var(--green2)">
+          <div class="card-icon ic-green">👶</div><h3>Child Tax Credit → $2,200</h3>
+          <p>The Child Tax Credit is now permanently <strong>$2,200 per qualifying child</strong> under 17, up from $2,000. The refundable portion is $1,700. Phase-out begins at $400,000 MFJ / $200,000 single.</p>
+        </div>
+        <div class="info-card reveal" style="border-top:3px solid var(--green2)">
+          <div class="card-icon ic-green">🏠</div><h3>SALT Cap → $40,000</h3>
+          <p>The state and local tax (SALT) deduction cap is raised from $10,000 to <strong>$40,000 for tax years 2025–2029</strong>. This benefits especially taxpayers in high-tax states like NY, CA, IL, NJ. Returns to $10,000 in 2030.</p>
+        </div>
+        <div class="info-card reveal" style="border-top:3px solid var(--green2)">
+          <div class="card-icon ic-green">💼</div><h3>No Tax on Tips</h3>
+          <p>Qualifying <strong>tip income is now tax-free</strong> (up to $25,000) for workers in service industries — food service, hospitality, hair salons, etc. Must report on Schedule A. FICA taxes still apply.</p>
+        </div>
+        <div class="info-card reveal" style="border-top:3px solid var(--green2)">
+          <div class="card-icon ic-green">⏰</div><h3>No Tax on Overtime</h3>
+          <p><strong>Overtime pay is excluded</strong> from federal income tax for eligible employees. This applies to overtime wages paid for hours worked beyond 40/week under FLSA. The exclusion is for income tax only; payroll taxes still apply.</p>
+        </div>
+        <div class="info-card reveal" style="border-top:3px solid var(--green2)">
+          <div class="card-icon ic-green">👴</div><h3>Senior Deduction $6,000</h3>
+          <p>New <strong>$6,000 above-the-line deduction</strong> for taxpayers age 65 and older. Phases out at $75,000 (single) / $150,000 (married). Stacks with the existing over-65 standard deduction bonus.</p>
+        </div>
+        <div class="info-card reveal" style="border-top:3px solid var(--green2)">
+          <div class="card-icon ic-green">🚗</div><h3>Car Loan Interest Back</h3>
+          <p>Interest on auto loans is now <strong>deductible up to $10,000</strong> for new vehicles assembled in the United States. Phases out for higher-income taxpayers. Applies to loans taken in 2025 and after.</p>
+        </div>
+        <div class="info-card reveal" style="border-top:3px solid var(--green2)">
+          <div class="card-icon ic-green">📊</div><h3>§199A Made Permanent</h3>
+          <p>The <strong>20% qualified business income (QBI) deduction</strong> for pass-through entities (S-corps, partnerships, sole proprietors) is now permanent. Previously set to expire in 2025. Key for business owners.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-selfemployed">
+      <div class="tip warn"><div class="tip-icon">⚠️</div><p><strong>Self-employed? Two hats, double tax.</strong> You pay both employee AND employer portions of Social Security + Medicare (15.3% SE tax). The good news: you deduct half of it from income, and §199A lets you deduct 20% of qualified business income (now permanent under OBBB).</p></div>
+      <div class="card-grid g3" style="margin-top:24px">
+        <div class="info-card reveal"><div class="card-icon ic-teal">📅</div><h3>2025–2026 Estimated Taxes</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Q4 2025: <strong>January 15, 2026</strong></li>
+            <li><span class="ci">✓</span>Q1 2026: <strong>April 15, 2026</strong></li>
+            <li><span class="ci">✓</span>Q2 2026: <strong>June 16, 2026</strong></li>
+            <li><span class="ci">✓</span>Q3 2026: <strong>September 15, 2026</strong></li>
+          </ul>
+          <div class="tip warn" style="margin-top:12px"><div class="tip-icon">⚠️</div><p>Owe $1,000+? You must pay quarterly or face underpayment penalties.</p></div>
+        </div>
+        <div class="info-card reveal"><div class="card-icon ic-gold">💼</div><h3>2025 Business Deductions</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Home office (regular, exclusive use only)</li>
+            <li><span class="ci">✓</span>Vehicle: <strong>70¢ per mile</strong> in 2025</li>
+            <li><span class="ci">✓</span>Phone & internet (business use %)</li>
+            <li><span class="ci">✓</span>Software, subscriptions, tools</li>
+            <li><span class="ci">✓</span>Professional development & courses</li>
+            <li><span class="ci">✓</span>Health insurance premiums (100%)</li>
+            <li><span class="ci">✓</span>Retirement contributions (SEP-IRA, Solo 401k)</li>
+          </ul>
+        </div>
+        <div class="info-card reveal"><div class="card-icon ic-navy">📊</div><h3>Key Self-Employment Forms</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>Schedule C</strong> — Business profit/loss</li>
+            <li><span class="ci">✓</span><strong>Schedule SE</strong> — Self-employment tax</li>
+            <li><span class="ci">✓</span><strong>Form 1040-ES</strong> — Quarterly estimates</li>
+            <li><span class="ci">✓</span><strong>1099-NEC</strong> — From each client paying $600+</li>
+            <li><span class="ci">✓</span><strong>Form 8995</strong> — §199A QBI deduction</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-refund">
+      <div class="tip info"><div class="tip-icon">💡</div><p><strong>Refund = you overpaid.</strong> A big refund sounds great but it means you gave the IRS an interest-free loan. Consider adjusting your W-4 withholding to keep more in each paycheck. The average 2025 refund is expected around $3,100.</p></div>
+      <div class="card-grid g2" style="margin-top:24px">
+        <div class="info-card reveal"><div class="card-icon ic-teal">⏱️</div><h3>2025 Refund Timeline</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>E-file + direct deposit: <strong>21 days typically</strong></li>
+            <li><span class="ci">✓</span>Paper return + direct deposit: 6–8 weeks</li>
+            <li><span class="ci">✓</span>Paper check mailed: add 1–2 weeks more</li>
+            <li><span class="ci">✓</span>Amended return: up to 16 weeks</li>
+            <li><span class="ci">✓</span>Track at <strong>IRS.gov → "Where's My Refund?"</strong></li>
+          </ul>
+        </div>
+        <div class="info-card reveal"><div class="card-icon ic-gold">🔧</div><h3>Maximize Your 2025 Refund</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Contribute to IRA by April 15, 2026 (counts for 2025)</li>
+            <li><span class="ci">✓</span>Claim all 2025 credits you qualify for</li>
+            <li><span class="ci">✓</span>Document all charitable donations</li>
+            <li><span class="ci">✓</span>Track all tip income separately (now potentially excludable)</li>
+            <li><span class="ci">✓</span>Verify you claimed the new $2,200 child credit</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ BUSINESS TAXES ══════════════════ -->
+<section id="business" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-tag">🏢 Business Taxes · Tax Year 2025</div>
+    <h2 class="section-title">Business & Entity Taxation</h2>
+    <p class="section-sub">S-Corps, partnerships, C-Corps, ASC 740 provisions, PTE elections, estimated taxes, and year-end planning — all updated for Tax Year 2025.</p>
+
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab('scorp',this)">S-Corporations</button>
+      <button class="tab-btn" onclick="switchTab('partnership',this)">Partnerships & LLCs</button>
+      <button class="tab-btn" onclick="switchTab('ccorp',this)">C-Corps</button>
+      <button class="tab-btn" onclick="switchTab('asc740',this)">ASC 740 Provisions</button>
+      <button class="tab-btn" onclick="switchTab('schedulec',this)">Schedule C Deep Dive</button>
+      <button class="tab-btn" onclick="switchTab('pte',this)">SALT & PTE Elections</button>
+      <button class="tab-btn" onclick="switchTab('bizest',this)">Estimated Taxes</button>
+      <button class="tab-btn" onclick="switchTab('yearend',this)">Year-End Planning</button>
+    </div>
+
+    <!-- S-CORPS -->
+    <div class="tab-panel active" id="tab-scorp">
+      <div class="tip info"><div class="tip-icon">💡</div><p><strong>S-Corp basics:</strong> An S-Corp is a pass-through entity — income, losses, deductions, and credits flow through to shareholders' personal returns via Schedule K-1. The S-Corp itself pays no federal income tax, but must file Form 1120-S. Under the OBBB, the §199A 20% QBI deduction is now permanent for S-Corp shareholders.</p></div>
+      <div class="card-grid g3" style="margin-top:24px">
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">💵</div>
+          <h3>Reasonable Compensation</h3>
+          <p>S-Corp shareholder-employees must pay themselves a <strong>reasonable salary</strong> before taking distributions. The IRS scrutinizes S-Corps that pay low wages to avoid FICA taxes.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Salary is subject to FICA (7.65% employee + 7.65% employer)</li>
+            <li><span class="ci">✓</span>Distributions above salary are NOT subject to FICA</li>
+            <li><span class="ci">✓</span>IRS uses industry comparables to assess reasonableness</li>
+            <li><span class="ci">✓</span>Key case: <em>Watson v. Commissioner (8th Cir. 2012)</em></li>
+            <li><span class="ci">✓</span>Document salary rationale each year in corporate minutes</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-gold">📊</div>
+          <h3>Shareholder Basis</h3>
+          <p>Shareholders can only deduct S-Corp losses up to their <strong>stock basis + debt basis</strong>. Basis must be tracked annually — the IRS does not track it for you.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Stock basis increases: capital contributions + income allocations</li>
+            <li><span class="ci">✓</span>Stock basis decreases: distributions + loss allocations</li>
+            <li><span class="ci">✓</span>Debt basis: direct loans from shareholder to S-Corp only</li>
+            <li><span class="ci">✓</span>Losses suspended if basis reaches zero — carried forward</li>
+            <li><span class="ci">✓</span>Track on Form 7203 (required since 2021)</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-navy">📤</div>
+          <h3>Distributions</h3>
+          <p>S-Corp distributions are generally <strong>tax-free to the extent of basis</strong>. Excess distributions are taxed as capital gain. Order of basis reduction matters.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Reduce stock basis first, then debt basis</li>
+            <li><span class="ci">✓</span>Distribution in excess of basis = capital gain</li>
+            <li><span class="ci">✓</span>AAA (Accumulated Adjustments Account) tracks E&P history</li>
+            <li><span class="ci">✓</span>Pro-rata distribution requirement for all shareholders</li>
+            <li><span class="ci">✓</span>State treatment varies — check each state</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-green">⭐</div>
+          <h3>QSBS — §1202 Exclusion</h3>
+          <p>Qualified Small Business Stock can exclude <strong>up to 100% of capital gains</strong> (up to $10M or 10x basis) from federal tax for eligible shareholders.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Must be a C-Corp at time of issuance (not S-Corp)</li>
+            <li><span class="ci">✓</span>Gross assets must be under $50M at time of issuance</li>
+            <li><span class="ci">✓</span>Must hold stock for more than 5 years</li>
+            <li><span class="ci">✓</span>Original issuance only — not secondary purchases</li>
+            <li><span class="ci">✓</span>Certain industries excluded (professional services, finance)</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">📝</div>
+          <h3>§199A QBI Deduction (2025)</h3>
+          <p>S-Corp shareholders can deduct <strong>20% of qualified business income</strong> — now <strong>permanent</strong> under OBBB signed July 4, 2025.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Phase-in for SSTBs starts at $197,300 single / $394,600 MFJ</li>
+            <li><span class="ci">✓</span>W-2 wage limitation applies above phase-out thresholds</li>
+            <li><span class="ci">✓</span>W-2 limit: 50% of W-2 wages, or 25% wages + 2.5% UBIA</li>
+            <li><span class="ci">✓</span>Reasonable comp reduces QBI — key planning consideration</li>
+            <li><span class="ci">✓</span>Reported on Form 8995 or 8995-A</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-red">⚠️</div>
+          <h3>S-Corp Eligibility Rules</h3>
+          <p>S-Corp elections can be inadvertently <strong>terminated</strong>. Know the rules to stay compliant.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Max 100 shareholders (family counts as one)</li>
+            <li><span class="ci">✓</span>Only US citizen/resident individuals, estates, certain trusts</li>
+            <li><span class="ci">✓</span>No nonresident alien shareholders</li>
+            <li><span class="ci">✓</span>Only one class of stock permitted</li>
+            <li><span class="ci">✓</span>Certain financial institutions and insurance companies excluded</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip warn" style="margin-top:24px"><div class="tip-icon">📅</div><p><strong>Key S-Corp deadlines:</strong> Form 1120-S is due <strong>March 15, 2026</strong> for Tax Year 2025 (or September 15 on extension). S-Corp elections for 2026 must be filed by March 15, 2026. Late elections may be available under Rev. Proc. 2013-30.</p></div>
+    </div>
+
+    <!-- PARTNERSHIPS -->
+    <div class="tab-panel" id="tab-partnership">
+      <div class="tip info"><div class="tip-icon">💡</div><p><strong>Partnership basics:</strong> Partnerships (and multi-member LLCs taxed as partnerships) file Form 1065 and issue Schedule K-1 to each partner. Partners pay tax on their <em>allocable share</em> of income — not distributions. This distinction is critical for cash flow planning.</p></div>
+      <div class="card-grid g3" style="margin-top:24px">
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">📋</div>
+          <h3>Schedule K-1 Breakdown</h3>
+          <p>Each partner receives a K-1 showing their share of partnership items. Understanding K-1 boxes is essential for accurate individual return filing.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Box 1: Ordinary business income/loss</li>
+            <li><span class="ci">✓</span>Box 2-3: Rental real estate income/loss</li>
+            <li><span class="ci">✓</span>Box 9-10: Net §1231 gain/loss</li>
+            <li><span class="ci">✓</span>Box 13: Other deductions (§179, charitable)</li>
+            <li><span class="ci">✓</span>Box 20: §199A QBI info for pass-through deduction</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-gold">⚖️</div>
+          <h3>Capital Accounts</h3>
+          <p>Partnerships must maintain capital accounts for each partner. The Tax Cuts and Jobs Act (TCJA) and 2020 regulations require <strong>tax basis capital account</strong> reporting on Schedule K-1.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Tax basis capital = contributions − distributions + income allocations</li>
+            <li><span class="ci">✓</span>Negative capital account ≠ immediate taxable event (usually)</li>
+            <li><span class="ci">✓</span>Tax basis method required since 2020 tax year</li>
+            <li><span class="ci">✓</span>Section 704(b) book capital also maintained separately</li>
+            <li><span class="ci">✓</span>Ending capital account disclosed annually on K-1</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-navy">💼</div>
+          <h3>Guaranteed Payments</h3>
+          <p>Guaranteed payments to partners are deductible by the partnership and <strong>taxable as ordinary income + self-employment tax</strong> to the recipient partner.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Reported on K-1 Box 4 — separate from distributive share</li>
+            <li><span class="ci">✓</span>Subject to SE tax (15.3% on first $176,100, 2.9% above)</li>
+            <li><span class="ci">✓</span>NOT eligible for §199A QBI deduction</li>
+            <li><span class="ci">✓</span>Paid regardless of partnership income/loss</li>
+            <li><span class="ci">✓</span>Distinguish carefully from distributive share allocations</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">🔄</div>
+          <h3>§754 Election & Basis Adjustments</h3>
+          <p>A §754 election allows the partnership to <strong>step up (or down) inside basis</strong> upon a partner's death or transfer of interest — eliminating phantom income for buyers.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>§743(b): Inside basis adjustment on transfer of partnership interest</li>
+            <li><span class="ci">✓</span>§734(b): Inside basis adjustment on distribution</li>
+            <li><span class="ci">✓</span>Once elected, §754 applies to all qualifying events</li>
+            <li><span class="ci">✓</span>Election filed with Form 1065 for the year of transfer</li>
+            <li><span class="ci">✓</span>Critical for high-value partnerships with appreciated assets</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-gold">📉</div>
+          <h3>Loss Limitation Rules</h3>
+          <p>Partner loss deductions are limited by four sequential rules — all must be satisfied before a loss can reduce taxable income.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>1. Basis limitation</strong> — Can't deduct more than outside basis</li>
+            <li><span class="ci">✓</span><strong>2. At-risk rules §465</strong> — Must be at economic risk</li>
+            <li><span class="ci">✓</span><strong>3. Passive activity §469</strong> — Material participation required</li>
+            <li><span class="ci">✓</span><strong>4. Excess business loss §461(l)</strong> — $313,000 single / $626,000 MFJ limit in 2025</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-green">🏗️</div>
+          <h3>Special Allocations</h3>
+          <p>Unlike S-Corps, partnerships can specially allocate income and loss items <strong>disproportionately</strong> among partners — but must satisfy Substantial Economic Effect rules.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Must have substantial economic effect under §704(b)</li>
+            <li><span class="ci">✓</span>Requires deficit restoration obligations or QIO</li>
+            <li><span class="ci">✓</span>Depreciation often specially allocated to tax-basis investors</li>
+            <li><span class="ci">✓</span>Preferred return structures common in real estate partnerships</li>
+            <li><span class="ci">✓</span>Document in partnership agreement — IRS will look here first</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip warn" style="margin-top:24px"><div class="tip-icon">📅</div><p><strong>Key partnership deadlines:</strong> Form 1065 is due <strong>March 15, 2026</strong> for Tax Year 2025 (or September 15 on extension). K-1s must be issued to partners by March 15. Late K-1s cascade into late individual returns.</p></div>
+    </div>
+
+    <!-- C-CORPS -->
+    <div class="tab-panel" id="tab-ccorp">
+      <div class="tip info"><div class="tip-icon">💡</div><p><strong>C-Corp basics:</strong> C-Corporations are separate taxpaying entities — they pay corporate income tax at <strong>21% flat rate</strong>, and shareholders pay tax again on dividends (double taxation). However, C-Corps offer unique advantages: QSBS exclusion, greater benefit flexibility, and easier access to institutional investment.</p></div>
+      <div class="card-grid g2" style="margin-top:24px">
+        <div class="info-card reveal">
+          <div class="card-icon ic-navy">📊</div>
+          <h3>2025 Corporate Tax Rates</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Federal corporate rate: <strong>21% flat</strong> (TCJA, made permanent by OBBB)</li>
+            <li><span class="ci">✓</span>Corporate AMT: <strong>15% CAMT</strong> on adjusted financial statement income for companies with 3-yr avg income over $1B</li>
+            <li><span class="ci">✓</span>Stock buyback excise tax: <strong>1%</strong> on net stock repurchases</li>
+            <li><span class="ci">✓</span>State corporate rates vary: Iowa 8.4% → Nevada 0%</li>
+            <li><span class="ci">✓</span>State apportionment: most states use single-sales-factor formula</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">💰</div>
+          <h3>Dividends Received Deduction (DRD)</h3>
+          <p>Corporate shareholders can deduct a portion of dividends received from other domestic corporations — reducing effective tax on intercompany dividends.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>70% DRD</strong> — less than 20% ownership</li>
+            <li><span class="ci">✓</span><strong>65% DRD</strong> — 20% or more ownership (not consolidated)</li>
+            <li><span class="ci">✓</span><strong>100% DRD</strong> — 80%+ ownership (consolidated group)</li>
+            <li><span class="ci">✓</span>Subject to taxable income limitation</li>
+            <li><span class="ci">✓</span>Reported on Form 1120, Schedule C</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-gold">📉</div>
+          <h3>Net Operating Losses (NOLs)</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Post-2017 NOLs: carry forward indefinitely, limited to <strong>80% of taxable income</strong></li>
+            <li><span class="ci">✓</span>No carryback for most C-Corps (except farming, insurance)</li>
+            <li><span class="ci">✓</span>Pre-2018 NOLs: 20-year carryforward, no 80% limit</li>
+            <li><span class="ci">✓</span>§382 limitation applies after ownership changes (>50% over 3 years)</li>
+            <li><span class="ci">✓</span>Track NOL vintage carefully — different rules apply</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-green">📑</div>
+          <h3>Key C-Corp Tax Forms</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>Form 1120</strong> — C-Corp annual income tax return (due April 15)</li>
+            <li><span class="ci">✓</span><strong>Form 1120-W</strong> — Estimated tax worksheet</li>
+            <li><span class="ci">✓</span><strong>Schedule M-1/M-3</strong> — Book to tax reconciliation</li>
+            <li><span class="ci">✓</span><strong>Schedule UTP</strong> — Uncertain tax positions (large corps)</li>
+            <li><span class="ci">✓</span><strong>Form 5471</strong> — Foreign subsidiary disclosure</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip warn" style="margin-top:24px"><div class="tip-icon">⚠️</div><p><strong>Double taxation planning:</strong> To minimize double taxation, C-Corp owners commonly use salary (deductible to corp), fringe benefits (deductible to corp), loans from corp, and S-Corp elections. The 21% rate + 23.8% qualified dividend rate = effective combined rate of ~39.8% — often higher than a pass-through structure for small businesses.</p></div>
+    </div>
+
+    <!-- ASC 740 -->
+    <div class="tab-panel" id="tab-asc740">
+      <div class="tip info"><div class="tip-icon">💡</div><p><strong>ASC 740 (Income Taxes)</strong> governs how companies account for income taxes in financial statements under US GAAP. It requires recognizing both <em>current</em> and <em>deferred</em> tax effects — capturing tax consequences of events in the period they occur, regardless of when cash is paid.</p></div>
+      <div class="card-grid g2" style="margin-top:24px">
+        <div class="info-card reveal">
+          <div class="card-icon ic-navy">📊</div>
+          <h3>Current vs. Deferred Tax</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>Current tax expense</strong> — Tax owed to IRS for the current year based on taxable income</li>
+            <li><span class="ci">✓</span><strong>Deferred tax asset (DTA)</strong> — Future tax benefit (e.g. NOL carryforward, warranty reserve)</li>
+            <li><span class="ci">✓</span><strong>Deferred tax liability (DTL)</strong> — Future tax obligation (e.g. accelerated depreciation)</li>
+            <li><span class="ci">✓</span>DTAs and DTLs arise from <em>temporary differences</em> between book and tax</li>
+            <li><span class="ci">✓</span>Permanent differences (meals, penalties) affect ETR only — no deferred tax</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">📉</div>
+          <h3>Common Temporary Differences</h3>
+          <div class="table-wrap" style="margin-top:12px">
+            <table>
+              <thead><tr><th>Item</th><th>Creates DTA or DTL?</th></tr></thead>
+              <tbody>
+                <tr><td>Accelerated tax depreciation (§168)</td><td>DTL</td></tr>
+                <tr><td>Warranty/returns accruals</td><td>DTA</td></tr>
+                <tr><td>Deferred revenue (ASC 606)</td><td>DTA</td></tr>
+                <tr><td>NOL carryforwards</td><td>DTA</td></tr>
+                <tr><td>Stock compensation (§83(b))</td><td>DTA/DTL</td></tr>
+                <tr><td>ROU asset vs lease liability</td><td>Net DTL typically</td></tr>
+                <tr><td>§263A UNICAP inventory</td><td>DTL</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-gold">⚖️</div>
+          <h3>Valuation Allowance</h3>
+          <p>A valuation allowance (VA) reduces a DTA when it is <strong>more likely than not</strong> (>50% threshold) that some or all of the DTA will not be realized.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Evaluate positive and negative evidence each reporting period</li>
+            <li><span class="ci">✓</span>Positive: future reversing DTLs, strong earnings history, backlog</li>
+            <li><span class="ci">✓</span>Negative: cumulative losses in recent years, near expiration of carryforwards</li>
+            <li><span class="ci">✓</span>VA release can significantly boost reported earnings — scrutinized by auditors</li>
+            <li><span class="ci">✓</span>Documented in tax provision memo each quarter/year</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-green">📋</div>
+          <h3>ETR Reconciliation</h3>
+          <p>The effective tax rate (ETR) reconciliation bridges the statutory rate (21%) to the actual rate in the income statement — required disclosure under ASC 740-10-50.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Start: pretax income × 21% federal statutory rate</li>
+            <li><span class="ci">✓</span>Add/subtract: state taxes, permanent differences, R&D credits</li>
+            <li><span class="ci">✓</span>Common items: §162(m) excess comp, meals (50% nondeductible), GILTI</li>
+            <li><span class="ci">✓</span>Discrete items: VA changes, statute expirations, return-to-provision</li>
+            <li><span class="ci">✓</span>ASC 740-10-50-15 requires % or dollar disclosure for items ≥5%</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-red">🔍</div>
+          <h3>Uncertain Tax Positions (ASC 740-10)</h3>
+          <p>Companies must evaluate whether each tax position meets a <strong>more-likely-than-not recognition threshold</strong> before recording any tax benefit.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Step 1: Recognition — more likely than not to be sustained (>50%)</li>
+            <li><span class="ci">✓</span>Step 2: Measurement — largest amount with >50% cumulative probability</li>
+            <li><span class="ci">✓</span>Unrecognized benefits recorded as liability (not current tax)</li>
+            <li><span class="ci">✓</span>Interest & penalties: policy election — income tax or separate line</li>
+            <li><span class="ci">✓</span>Tabular rollforward of UTB balance required annually</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">📅</div>
+          <h3>Provision Process & Timeline</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>Q1-Q3 estimates:</strong> annualized ETR method or discrete-item approach</li>
+            <li><span class="ci">✓</span><strong>Annual provision:</strong> full current + deferred calculation</li>
+            <li><span class="ci">✓</span><strong>Return-to-provision:</strong> true-up when actual tax return is filed</li>
+            <li><span class="ci">✓</span><strong>Audit support:</strong> maintain workpapers for all significant positions</li>
+            <li><span class="ci">✓</span>Coordinate with external auditors early — provision often on critical path</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCHEDULE C -->
+    <div class="tab-panel" id="tab-schedulec">
+      <div class="tip info"><div class="tip-icon">💡</div><p><strong>Schedule C</strong> reports profit or loss from a sole proprietorship or single-member LLC disregarded entity. Net profit flows to Form 1040 and is also subject to <strong>self-employment tax (15.3%)</strong> on the first $176,100 and 2.9% above that for Tax Year 2025.</p></div>
+      <div class="card-grid g3" style="margin-top:24px">
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">🏠</div>
+          <h3>Home Office Deduction</h3>
+          <p>A dedicated, regularly used business space qualifies. Two methods allowed:</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>Simplified:</strong> $5 per sq ft, max 300 sq ft = $1,500 max</li>
+            <li><span class="ci">✓</span><strong>Regular method:</strong> actual expenses × business-use percentage</li>
+            <li><span class="ci">✓</span>Includes rent/mortgage interest, utilities, insurance, depreciation</li>
+            <li><span class="ci">✓</span>Employees working from home: NOT deductible since TCJA 2018</li>
+            <li><span class="ci">✓</span>Must be exclusive and regular use — no personal use allowed</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-gold">🚗</div>
+          <h3>Vehicle Deduction 2025</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>Standard mileage rate: 70¢ per mile</strong> for 2025</li>
+            <li><span class="ci">✓</span>Must log date, destination, business purpose, miles</li>
+            <li><span class="ci">✓</span><strong>Actual expense method:</strong> gas, insurance, repairs × business %</li>
+            <li><span class="ci">✓</span>§179 expensing: deduct up to $1,220,000 of vehicle cost in 2025</li>
+            <li><span class="ci">✓</span>Luxury auto limits apply to passenger vehicles</li>
+            <li><span class="ci">✓</span>Cannot switch from actual to standard after first year</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-navy">💳</div>
+          <h3>Deductible Business Expenses</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Advertising and marketing (100%)</li>
+            <li><span class="ci">✓</span>Professional fees — legal, accounting, consulting</li>
+            <li><span class="ci">✓</span>Office supplies, software, subscriptions</li>
+            <li><span class="ci">✓</span>Business meals: <strong>50% deductible</strong></li>
+            <li><span class="ci">✓</span>Business travel: 100% (flights, hotels, 50% meals)</li>
+            <li><span class="ci">✓</span>Professional development and education</li>
+            <li><span class="ci">✓</span>Health insurance premiums (100% above-the-line)</li>
+            <li><span class="ci">✓</span>Retirement contributions: SEP-IRA up to $70,000 in 2025</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-green">📊</div>
+          <h3>§179 & Bonus Depreciation 2025</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>§179 expensing limit: <strong>$1,220,000</strong> for 2025</li>
+            <li><span class="ci">✓</span>§179 phase-out begins at $3,050,000 of purchases</li>
+            <li><span class="ci">✓</span>Bonus depreciation: <strong>40% in 2025</strong> (phasing down from 100%)</li>
+            <li><span class="ci">✓</span>Applies to new and used qualifying property</li>
+            <li><span class="ci">✓</span>Listed property rules limit deductions for vehicles, computers</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">📑</div>
+          <h3>Schedule C vs. S-Corp: When to Convert?</h3>
+          <p>The break-even analysis depends on net profit. A general rule:</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Under ~$40,000 net profit: Schedule C often simpler</li>
+            <li><span class="ci">✓</span><strong>Over $40,000–$50,000:</strong> S-Corp election typically saves FICA taxes</li>
+            <li><span class="ci">✓</span>S-Corp costs: payroll, additional state filings, 1120-S prep</li>
+            <li><span class="ci">✓</span>Typical SE tax savings: 15.3% × (profit − reasonable salary)</li>
+            <li><span class="ci">✓</span>Consult a CPA — the math depends on your specific situation</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-gold">🏦</div>
+          <h3>Self-Employed Retirement Plans 2025</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>SEP-IRA:</strong> up to 25% of net self-employment income, max $70,000</li>
+            <li><span class="ci">✓</span><strong>Solo 401(k):</strong> $23,500 employee + 25% employer, max $70,000</li>
+            <li><span class="ci">✓</span><strong>SIMPLE IRA:</strong> $16,500 employee deferral for 2025</li>
+            <li><span class="ci">✓</span>Solo 401(k) allows Roth contributions — major advantage</li>
+            <li><span class="ci">✓</span>SEP-IRA deadline: tax return due date (+ extension)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PTE / SALT -->
+    <div class="tab-panel" id="tab-pte">
+      <div class="tip new"><div class="tip-icon">🆕</div><p><strong>SALT cap update under OBBB:</strong> The federal SALT deduction cap was raised from $10,000 to <strong>$40,000 for tax years 2025–2029</strong>. However, the PTE (Pass-Through Entity) election remains valuable in many states because it can fully bypass the SALT cap for business income — not just raise it.</p></div>
+      <div class="card-grid g2" style="margin-top:24px">
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">🗺️</div>
+          <h3>What Is a PTE Election?</h3>
+          <p>A Pass-Through Entity tax election allows a partnership or S-Corp to <strong>pay state income tax at the entity level</strong> instead of the individual level. The entity deducts the state tax on its federal return (no SALT cap applies to business deductions), and shareholders/partners get a state credit.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Effective bypass of the federal SALT cap on business income</li>
+            <li><span class="ci">✓</span>Entity deducts state tax → reduces federal taxable income</li>
+            <li><span class="ci">✓</span>Individual gets a state credit for their share of PTE tax paid</li>
+            <li><span class="ci">✓</span>Available in 36+ states as of 2025</li>
+            <li><span class="ci">✓</span>IRS confirmed PTE elections are valid under Notice 2020-75</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-gold">📍</div>
+          <h3>PTE Election by State (Key States)</h3>
+          <div class="table-wrap" style="margin-top:12px">
+            <table>
+              <thead><tr><th>State</th><th>PTE Available</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>New York</td><td>✅ Yes</td><td>PTET election, mandatory for many</td></tr>
+                <tr><td>California</td><td>✅ Yes</td><td>9.3% rate, elective</td></tr>
+                <tr><td>New Jersey</td><td>✅ Yes</td><td>BAIT election</td></tr>
+                <tr><td>Illinois</td><td>✅ Yes</td><td>Pass-through entity tax</td></tr>
+                <tr><td>Texas</td><td>❌ No income tax</td><td>Franchise tax applies</td></tr>
+                <tr><td>Florida</td><td>❌ No income tax</td><td>N/A for individuals</td></tr>
+                <tr><td>Pennsylvania</td><td>⚠️ Limited</td><td>No formal PTE election</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-navy">⚖️</div>
+          <h3>State Apportionment Basics</h3>
+          <p>Multi-state businesses must apportion income among states. Most states now use a <strong>single sales factor</strong> formula.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>Single sales factor:</strong> Sales in state ÷ Total sales</li>
+            <li><span class="ci">✓</span><strong>Three-factor:</strong> Average of sales, payroll, property (older states)</li>
+            <li><span class="ci">✓</span>Market-based sourcing: services sourced where customer receives benefit</li>
+            <li><span class="ci">✓</span>Cost-of-performance: services sourced where work is performed (older rule)</li>
+            <li><span class="ci">✓</span>Nexus created by: employees, property, economic nexus (sales threshold)</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-red">⚠️</div>
+          <h3>SALT Planning with the $40,000 Cap</h3>
+          <p>Even with the OBBB raising the SALT cap to $40,000, high earners in NY, CA, NJ, IL will still benefit from PTE elections for <strong>business income above the cap</strong>.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>$40,000 cap applies to individual SALT — not entity-level deductions</li>
+            <li><span class="ci">✓</span>PTE tax paid by entity: fully deductible, no cap</li>
+            <li><span class="ci">✓</span>Phase-out: SALT cap reduces above $500,000 MAGI</li>
+            <li><span class="ci">✓</span>NY PTET elections due March 15 for calendar-year entities</li>
+            <li><span class="ci">✓</span>Estimated PTE payments may be required quarterly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESTIMATED TAXES FOR BUSINESSES -->
+    <div class="tab-panel" id="tab-bizest">
+      <div class="tip warn"><div class="tip-icon">⚠️</div><p><strong>Who must pay estimated taxes?</strong> Any individual or business expecting to owe $1,000 or more in tax after withholding must make quarterly estimated payments. C-Corps must pay if they expect to owe $500 or more. Underpayment penalty applies even if you pay in full by April 15.</p></div>
+      <div class="card-grid g2" style="margin-top:24px">
+        <div class="info-card reveal">
+          <div class="card-icon ic-teal">📅</div>
+          <h3>2025–2026 Estimated Tax Deadlines</h3>
+          <div class="table-wrap" style="margin-top:12px">
+            <table>
+              <thead><tr><th>Period</th><th>Individual / SE / S-Corp Owner</th><th>C-Corp</th></tr></thead>
+              <tbody>
+                <tr><td>Q4 2025</td><td>January 15, 2026</td><td>December 15, 2025</td></tr>
+                <tr><td>Q1 2026</td><td>April 15, 2026</td><td>April 15, 2026</td></tr>
+                <tr><td>Q2 2026</td><td>June 16, 2026</td><td>June 16, 2026</td></tr>
+                <tr><td>Q3 2026</td><td>September 15, 2026</td><td>September 15, 2026</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-gold">🧮</div>
+          <h3>Safe Harbor Rules — Avoid Penalties</h3>
+          <p>Pay enough to qualify for a safe harbor and avoid underpayment penalties regardless of your actual tax liability:</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>100% of prior year tax</strong> — safest if income was lower last year</li>
+            <li><span class="ci">✓</span><strong>110% of prior year tax</strong> — required if prior year AGI over $150,000</li>
+            <li><span class="ci">✓</span><strong>90% of current year tax</strong> — if you can estimate accurately</li>
+            <li><span class="ci">✓</span>C-Corps: 100% of prior year tax or 100% of current year tax</li>
+            <li><span class="ci">✓</span>Use Form 2210 to calculate underpayment penalty if needed</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-navy">📊</div>
+          <h3>Calculating Estimated Payments</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Estimate annual gross income from all sources</li>
+            <li><span class="ci">✓</span>Subtract deductions: standard/itemized + business deductions</li>
+            <li><span class="ci">✓</span>Calculate tax using 2025 brackets</li>
+            <li><span class="ci">✓</span>Add self-employment tax (15.3% up to $176,100)</li>
+            <li><span class="ci">✓</span>Subtract credits and withholding</li>
+            <li><span class="ci">✓</span>Divide by 4 = quarterly payment. Use Form 1040-ES</li>
+          </ul>
+        </div>
+        <div class="info-card reveal">
+          <div class="card-icon ic-green">💡</div>
+          <h3>Tips for Variable Income</h3>
+          <p>Freelancers, partners, and S-Corp owners often have lumpy income. The <strong>annualized income installment method</strong> (Form 2210, Schedule AI) can reduce penalties when income is earned unevenly.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Annualize actual income through each quarter-end</li>
+            <li><span class="ci">✓</span>Pay required amount based on annualized income — not equal quarters</li>
+            <li><span class="ci">✓</span>Best if most income earned in Q3/Q4</li>
+            <li><span class="ci">✓</span>Saves cash flow early in the year</li>
+            <li><span class="ci">✓</span>Pay via IRS Direct Pay or EFTPS at irs.gov</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- YEAR-END PLANNING -->
+    <div class="tab-panel" id="tab-yearend">
+      <div class="tip info"><div class="tip-icon">💡</div><p><strong>Year-end tax planning</strong> is most powerful before December 31. While individuals have until April 15, 2026 for IRA contributions, most entity-level elections and income/expense timing decisions must be made by year-end. This guide focuses on moves available before December 31, 2025.</p></div>
+      <div class="card-grid g3" style="margin-top:24px">
+        <div class="info-card reveal" style="border-top:3px solid var(--teal)">
+          <div class="card-icon ic-teal">📉</div>
+          <h3>Accelerate Deductions into 2025</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Purchase and place business equipment in service before Dec 31 (§179 + bonus depreciation)</li>
+            <li><span class="ci">✓</span>Prepay deductible expenses: rent, subscriptions, insurance (12-month rule)</li>
+            <li><span class="ci">✓</span>Make charitable contributions by Dec 31</li>
+            <li><span class="ci">✓</span>Max out retirement plan contributions by Dec 31 (401k) or filing deadline (IRA, SEP)</li>
+            <li><span class="ci">✓</span>Pay state estimated taxes by Dec 31 to maximize SALT deduction</li>
+          </ul>
+        </div>
+        <div class="info-card reveal" style="border-top:3px solid var(--gold)">
+          <div class="card-icon ic-gold">📈</div>
+          <h3>Defer Income into 2026</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Delay invoicing clients until late December if cash basis</li>
+            <li><span class="ci">✓</span>Defer year-end bonuses to January 2026 payroll</li>
+            <li><span class="ci">✓</span>Hold off on asset sales with gains until January</li>
+            <li><span class="ci">✓</span>Consider installment sale treatment for large asset dispositions</li>
+            <li><span class="ci">✓</span>Roth conversion planning: defer if expecting lower income in 2026</li>
+          </ul>
+        </div>
+        <div class="info-card reveal" style="border-top:3px solid var(--green2)">
+          <div class="card-icon ic-green">💰</div>
+          <h3>Investment & Capital Gains Planning</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span><strong>Tax-loss harvesting:</strong> sell losing positions to offset gains</li>
+            <li><span class="ci">✓</span>Wash-sale rule: wait 30 days before rebuying same security</li>
+            <li><span class="ci">✓</span>Long-term vs. short-term: hold over 1 year for preferential rates</li>
+            <li><span class="ci">✓</span>0% LTCG rate applies up to $48,350 taxable income (single)</li>
+            <li><span class="ci">✓</span>Qualified Opportunity Zone investments: defer and reduce gains</li>
+          </ul>
+        </div>
+        <div class="info-card reveal" style="border-top:3px solid var(--teal)">
+          <div class="card-icon ic-teal">🏢</div>
+          <h3>Entity-Level Year-End Moves</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>S-Corp: declare and pay shareholder bonuses before Dec 31</li>
+            <li><span class="ci">✓</span>Partnership: review capital accounts and special allocations</li>
+            <li><span class="ci">✓</span>C-Corp: evaluate §1202 QSBS planning opportunities</li>
+            <li><span class="ci">✓</span>Make PTE election payments before state deadlines</li>
+            <li><span class="ci">✓</span>Review §163(j) interest expense limitation — carry forward rules</li>
+          </ul>
+        </div>
+        <div class="info-card reveal" style="border-top:3px solid var(--gold)">
+          <div class="card-icon ic-gold">🎁</div>
+          <h3>Gift & Estate Planning</h3>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Annual gift exclusion: <strong>$19,000 per recipient</strong> in 2025</li>
+            <li><span class="ci">✓</span>Married couple: $38,000 per recipient with gift splitting</li>
+            <li><span class="ci">✓</span>529 superfunding: 5-year election, $95,000 per beneficiary</li>
+            <li><span class="ci">✓</span>Estate exemption: $13,990,000 per individual in 2025</li>
+            <li><span class="ci">✓</span>OBBB increases estate exemption to $15M in 2026</li>
+          </ul>
+        </div>
+        <div class="info-card reveal" style="border-top:3px solid var(--green2)">
+          <div class="card-icon ic-green">🔄</div>
+          <h3>Roth Conversion Planning</h3>
+          <p>Converting traditional IRA/401(k) to Roth in a low-income year locks in today's tax rate on future tax-free growth.</p>
+          <ul class="checklist" style="margin-top:10px">
+            <li><span class="ci">✓</span>Best when in a low bracket or have offsetting deductions/losses</li>
+            <li><span class="ci">✓</span>Convert up to the top of the 22% or 24% bracket</li>
+            <li><span class="ci">✓</span>Pay conversion tax from outside funds — not the converted amount</li>
+            <li><span class="ci">✓</span>No income limit on Roth conversions (backdoor Roth still available)</li>
+            <li><span class="ci">✓</span>5-year holding period starts fresh on each conversion</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════ TAX CALCULATOR ══════════════════ -->
+<section id="calculator" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-tag">🧮 Tax Tools · Tax Year 2025</div>
+    <h2 class="section-title">Tax Calculators & Tools</h2>
+    <p class="section-sub">Interactive tools for Tax Year 2025 — updated with OBBB rates. All calculations run in your browser.</p>
+
+    <div class="calc-tab-nav">
+      <button class="calc-tab-btn active" onclick="switchCalcTab('federal',this)">Federal Tax</button>
+      <button class="calc-tab-btn" onclick="switchCalcTab('se',this)">Self-Employment</button>
+      <button class="calc-tab-btn" onclick="switchCalcTab('withholding',this)">Withholding Check</button>
+      <button class="calc-tab-btn" onclick="switchCalcTab('capgains',this)">Capital Gains</button>
+    </div>
+
+    <!-- FEDERAL TAX CALCULATOR -->
+    <div class="calc-panel active" id="calcpanel-federal">
+      <div class="calc-wrap">
+        <div class="calc-header"><div><h3>Federal Tax Estimator</h3><span>Tax Year 2025 · OBBB Rates</span></div></div>
+        <div class="calc-body">
+          <div class="calc-inputs">
+            <div class="form-group"><label class="form-label">Gross Annual Income</label><input class="form-input" type="number" id="calc-income" placeholder="e.g. 75000" min="0"/></div>
+            <div class="form-group"><label class="form-label">Filing Status</label>
+              <select class="form-select" id="calc-status">
+                <option value="single">Single</option>
+                <option value="marriedFilingJointly">Married Filing Jointly</option>
+                <option value="headOfHousehold">Head of Household</option>
+                <option value="marriedFilingSeparately">Married Filing Separately</option>
+              </select></div>
+            <div class="form-group"><label class="form-label">Itemized Deductions (leave blank for standard)</label><input class="form-input" type="number" id="calc-deductions" placeholder="e.g. 22000 or leave blank"/></div>
+            <div class="form-group"><label class="form-label">Tax Credits to Apply</label><input class="form-input" type="number" id="calc-credits" placeholder="e.g. 2200 (child credit)"/></div>
+            <button class="calc-btn" onclick="calculateTax()">Calculate 2025 Tax →</button>
+          </div>
+          <div class="calc-result" id="calc-result">
+            <div class="calc-result-empty"><div class="icon">🧮</div><p style="color:var(--text3);font-size:15px">Enter your income to see your estimated 2025 federal tax.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SELF-EMPLOYMENT TAX CALCULATOR -->
+    <div class="calc-panel" id="calcpanel-se">
+      <div class="calc-wrap">
+        <div class="calc-header"><div><h3>Self-Employment Tax Calculator</h3><span>FICA + Income Tax · 2025</span></div></div>
+        <div class="calc-body">
+          <div class="calc-inputs">
+            <div class="form-group"><label class="form-label">Net Self-Employment Income (Schedule C profit)</label><input class="form-input" type="number" id="se-income" placeholder="e.g. 95000" min="0"/></div>
+            <div class="form-group"><label class="form-label">Filing Status</label>
+              <select class="form-select" id="se-status">
+                <option value="single">Single</option>
+                <option value="marriedFilingJointly">Married Filing Jointly</option>
+                <option value="headOfHousehold">Head of Household</option>
+              </select></div>
+            <div class="form-group"><label class="form-label">Other W-2 / Wage Income (if any)</label><input class="form-input" type="number" id="se-other-income" placeholder="e.g. 40000 or 0"/></div>
+            <button class="calc-btn" onclick="calculateSE()">Calculate SE Tax →</button>
+          </div>
+          <div class="calc-result" id="se-result">
+            <div class="calc-result-empty"><div class="icon">💼</div><p style="color:var(--text3);font-size:15px">Enter your Schedule C net profit to see your combined SE + income tax.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WITHHOLDING CHECK -->
+    <div class="calc-panel" id="calcpanel-withholding">
+      <div class="calc-wrap">
+        <div class="calc-header"><div><h3>Withholding Checkup</h3><span>Are you on track for April 2026?</span></div></div>
+        <div class="calc-body">
+          <div class="calc-inputs">
+            <div class="form-group"><label class="form-label">Expected 2025 Total Income</label><input class="form-input" type="number" id="wh-income" placeholder="e.g. 85000" min="0"/></div>
+            <div class="form-group"><label class="form-label">Filing Status</label>
+              <select class="form-select" id="wh-status">
+                <option value="single">Single</option>
+                <option value="marriedFilingJointly">Married Filing Jointly</option>
+                <option value="headOfHousehold">Head of Household</option>
+              </select></div>
+            <div class="form-group"><label class="form-label">Total Federal Tax Withheld YTD (check your last paystub)</label><input class="form-input" type="number" id="wh-withheld" placeholder="e.g. 12500"/></div>
+            <div class="form-group"><label class="form-label">Estimated Tax Payments Made YTD</label><input class="form-input" type="number" id="wh-estimated" placeholder="e.g. 3000 or 0"/></div>
+            <button class="calc-btn" onclick="calculateWithholding()">Check Withholding →</button>
+          </div>
+          <div class="calc-result" id="wh-result">
+            <div class="calc-result-empty"><div class="icon">🔍</div><p style="color:var(--text3);font-size:15px">Check if you'll owe or get a refund in April 2026.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAPITAL GAINS CALCULATOR -->
+    <div class="calc-panel" id="calcpanel-capgains">
+      <div class="calc-wrap">
+        <div class="calc-header"><div><h3>Capital Gains Tax Estimator</h3><span>Short-term + Long-term · NIIT</span></div></div>
+        <div class="calc-body">
+          <div class="calc-inputs">
+            <div class="form-group"><label class="form-label">Ordinary Taxable Income (W-2 + other, after deductions)</label><input class="form-input" type="number" id="cg-ordinary" placeholder="e.g. 80000" min="0"/></div>
+            <div class="form-group"><label class="form-label">Long-Term Capital Gains (held > 1 year)</label><input class="form-input" type="number" id="cg-ltcg" placeholder="e.g. 25000"/></div>
+            <div class="form-group"><label class="form-label">Short-Term Capital Gains (held ≤ 1 year)</label><input class="form-input" type="number" id="cg-stcg" placeholder="e.g. 5000"/></div>
+            <div class="form-group"><label class="form-label">Filing Status</label>
+              <select class="form-select" id="cg-status">
+                <option value="single">Single</option>
+                <option value="marriedFilingJointly">Married Filing Jointly</option>
+                <option value="headOfHousehold">Head of Household</option>
+              </select></div>
+            <button class="calc-btn" onclick="calculateCapGains()">Calculate Gains Tax →</button>
+          </div>
+          <div class="calc-result" id="cg-result">
+            <div class="calc-result-empty"><div class="icon">📈</div><p style="color:var(--text3);font-size:15px">Estimate tax on investment gains including NIIT (3.8%).</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PLANNING ══════════════════ -->
+<section id="planning">
+  <div class="section-inner">
+    <div class="section-tag">💰 Financial Planning</div>
+    <h2 class="section-title">Build Your Financial Future</h2>
+    <p class="section-sub">Smart money habits that compound over time — retirement accounts, investing basics, and credit — explained simply.</p>
+    <div class="card-grid g4">
+      <div class="info-card reveal"><div class="card-icon ic-teal">🏦</div><h3>Emergency Fund First</h3><p>Save 3–6 months of expenses in a high-yield savings account before investing. This is your financial safety net. Current HYSA rates: 4.5–5.0% APY.</p></div>
+      <div class="info-card reveal"><div class="card-icon ic-gold">📈</div><h3>2025 Retirement Limits</h3><p><strong>401(k):</strong> $23,500/yr. Ages 50+: +$7,500. Ages 60–63: +$11,250 super catch-up (new!).<br/><strong>IRA/Roth:</strong> $7,000/yr. Ages 50+: +$1,000.</p></div>
+      <div class="info-card reveal"><div class="card-icon ic-teal">🎓</div><h3>529 College Savings</h3><p>Tax-free growth and withdrawals for education. Many states offer a deduction for contributions. New: up to $35,000 of unused funds can be rolled into a Roth IRA.</p></div>
+      <div class="info-card reveal"><div class="card-icon ic-gold">❤️</div><h3>HSA — Triple Tax Win</h3><p>2025 limits: <strong>$4,300</strong> single / <strong>$8,550</strong> family. Deductible contributions + tax-free growth + tax-free medical withdrawals. Invest the balance!</p></div>
+    </div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:26px;color:var(--navy);margin:48px 0 24px">Common Financial Questions</h3>
+    <div class="accordion">
+      <div class="acc-item"><button class="acc-header" onclick="toggleAcc(this)"><span class="acc-title">Roth IRA vs Traditional IRA — which is better for me?</span><span class="acc-icon">+</span></button>
+        <div class="acc-body"><p><strong>Traditional IRA:</strong> Contribute pre-tax money, deduct it now, pay taxes in retirement. Best if you expect lower income in retirement.</p><p style="margin-top:10px"><strong>Roth IRA:</strong> Contribute after-tax money. All growth and withdrawals in retirement are 100% tax-free. Best for younger workers or those expecting higher income later.</p><p style="margin-top:10px">2025 Roth income phase-out: $150,000–$165,000 (single) / $236,000–$246,000 (married). Both: $7,000/year limit ($8,000 if 50+).</p></div>
+      </div>
+      <div class="acc-item"><button class="acc-header" onclick="toggleAcc(this)"><span class="acc-title">How much should I save each month?</span><span class="acc-icon">+</span></button>
+        <div class="acc-body"><p>The <strong>50/30/20 rule</strong> is a great starting point: 50% needs, 30% wants, 20% savings. For retirement specifically, aim to save <strong>15% of income</strong> (including employer match). At minimum, always contribute enough to get the full employer 401(k) match — that's a guaranteed 50–100% return.</p></div>
+      </div>
+      <div class="acc-item"><button class="acc-header" onclick="toggleAcc(this)"><span class="acc-title">Should I pay off debt or invest?</span><span class="acc-icon">+</span></button>
+        <div class="acc-body"><p>Simple decision tree:<br/>1. Always get the full 401(k) employer match first (guaranteed return).<br/>2. Pay off high-interest debt (>7%) before investing beyond the match.<br/>3. Build 3-month emergency fund.<br/>4. Max Roth IRA ($7,000/year).<br/>5. Max 401(k) ($23,500/year).<br/>6. Invest in taxable brokerage accounts after.</p></div>
+      </div>
+      <div class="acc-item"><button class="acc-header" onclick="toggleAcc(this)"><span class="acc-title">What is a credit score and how do I improve it?</span><span class="acc-icon">+</span></button>
+        <div class="acc-body"><p>Credit score (300–850) = how risky you are to lenders. Components: <strong>Payment history (35%)</strong> — always pay on time. <strong>Utilization (30%)</strong> — keep balances below 30% of limits. <strong>Age (15%)</strong> — keep old accounts open. <strong>Mix (10%)</strong> — varied account types. <strong>Inquiries (10%)</strong> — limit applications. Free report: AnnualCreditReport.com</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ AUDIT & IRS ══════════════════ -->
+<section id="audit" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-tag">🔍 IRS & Audits</div>
+    <h2 class="section-title">IRS Letters, Audits & Your Rights</h2>
+    <p class="section-sub">Getting a letter from the IRS is scary — but usually not as serious as it seems. Here's exactly what to do.</p>
+    <div class="tip alert"><div class="tip-icon">🚨</div><p><strong>IRS Scam Warning — 2025:</strong> The IRS will NEVER call demanding immediate payment, threaten arrest, or ask for gift cards, crypto, or wire transfers. All real IRS contact starts with a <em>letter in the mail</em>. Scam calls are common — hang up immediately and report to reportphishing@irs.gov.</p></div>
+    <div class="card-grid g3" style="margin-top:32px">
+      <div class="info-card reveal"><div class="card-icon ic-teal">📬</div><h3>Got an IRS Letter?</h3>
+        <ul class="checklist" style="margin-top:10px">
+          <li><span class="ci">✓</span>Don't panic — most are routine notices</li>
+          <li><span class="ci">✓</span>Note the <strong>notice number</strong> (top right corner)</li>
+          <li><span class="ci">✓</span>Look it up at IRS.gov/notices</li>
+          <li><span class="ci">✓</span>Respond by the deadline shown</li>
+          <li><span class="ci">✓</span>Keep copies of everything you send</li>
+        </ul>
+      </div>
+      <div class="info-card reveal"><div class="card-icon ic-red">🔎</div><h3>What Triggers an Audit?</h3>
+        <ul class="checklist" style="margin-top:10px">
+          <li><span class="ci">✓</span>Very high income (over $500K)</li>
+          <li><span class="ci">✓</span>Unusually large deductions for income level</li>
+          <li><span class="ci">✓</span>Unreported 1099/W-2 income (IRS cross-checks)</li>
+          <li><span class="ci">✓</span>Cryptocurrency transactions (new focus in 2025)</li>
+          <li><span class="ci">✓</span>100% business use of vehicle claim</li>
+          <li><span class="ci">✓</span>EITC claims (high fraud rate)</li>
+        </ul>
+      </div>
+      <div class="info-card reveal"><div class="card-icon ic-gold">⚖️</div><h3>Your Taxpayer Rights</h3>
+        <ul class="checklist" style="margin-top:10px">
+          <li><span class="ci">✓</span>Right to be informed clearly</li>
+          <li><span class="ci">✓</span>Right to quality service</li>
+          <li><span class="ci">✓</span>Right to hire a representative (CPA/EA)</li>
+          <li><span class="ci">✓</span>Right to challenge IRS positions</li>
+          <li><span class="ci">✓</span>Right to appeal to Tax Court</li>
+          <li><span class="ci">✓</span>Right to a fair tax system</li>
+        </ul>
+      </div>
+    </div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--navy);margin:40px 0 20px">Common IRS Notices Explained</h3>
+    <div class="accordion">
+      <div class="acc-item"><button class="acc-header" onclick="toggleAcc(this)"><span class="acc-title">CP2000 — IRS says your income doesn't match</span><span class="acc-icon">+</span></button>
+        <div class="acc-body"><p>The most common IRS notice. It means the IRS found income reported to them (like a 1099 you forgot) that doesn't match your return. You have 60 days to: agree and pay, disagree with documentation, or partially agree. Don't ignore it — the IRS will assess the tax automatically if you don't respond.</p></div>
+      </div>
+      <div class="acc-item"><button class="acc-header" onclick="toggleAcc(this)"><span class="acc-title">CP501/CP503/CP504 — Balance Due Escalation</span><span class="acc-icon">+</span></button>
+        <div class="acc-body"><p>Escalating reminders that you owe money. CP501 is friendly. CP503 is a reminder. CP504 is urgent — it warns the IRS may levy your state refund. Set up an online payment plan at IRS.gov before it reaches CP90 (final notice of intent to levy).</p></div>
+      </div>
+      <div class="acc-item"><button class="acc-header" onclick="toggleAcc(this)"><span class="acc-title">Can't pay your 2025 taxes? Options available</span><span class="acc-icon">+</span></button>
+        <div class="acc-body"><ul><li><strong>Online Payment Agreement</strong> — Set up at IRS.gov in minutes. As low as $25/month.</li><li><strong>Currently Not Collectible</strong> — IRS pauses collections if you genuinely can't pay</li><li><strong>Offer in Compromise</strong> — Settle for less than owed. Complex — use a tax professional</li><li><strong>Penalty Abatement</strong> — First-time penalty relief if you have a clean history</li><li><strong>Innocent Spouse Relief</strong> — If your spouse caused the tax problem</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ INTERNATIONAL STUDENTS ══════════════════ -->
+<section id="international" class="dark-bg">
+  <div class="section-inner">
+    <div class="section-tag">🌍 International Students</div>
+    <h2 class="section-title">Tax Guide for International Students</h2>
+    <p class="section-sub">Filing US taxes on an F-1, J-1, or other visa is confusing. Here's exactly what you need to do for <strong style="color:var(--gold2)">Tax Year 2025</strong> (filed by April 15, 2026).</p>
+    <div class="intl-grid">
+      <div>
+        <div class="tip warn" style="margin-bottom:26px"><div class="tip-icon">⚠️</div><p><strong>Critical:</strong> Most international students are "nonresident aliens" for tax purposes — even after years in the US. You file <strong>different forms</strong> than citizens and <strong>cannot use TurboTax or H&R Block</strong> for nonresident filers. Use Sprintax or Glacier Tax Prep instead.</p></div>
+        <h3 style="color:var(--white);font-family:'Playfair Display',serif;font-size:22px;margin-bottom:20px">Step-by-Step: Tax Year 2025</h3>
+        <div>
+          <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Determine Your Tax Residency Status</h4><p>Use the Substantial Presence Test. Most F-1/J-1 students are nonresident aliens for their first 5 calendar years. After that, you may become a resident alien and file a regular 1040.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Get an ITIN if You Have No SSN</h4><p>No SSN and no US income? Apply for an ITIN via Form W-7. Your school's international office or an IRS Acceptance Agent can help. Processing takes 7–11 weeks.</p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><h4>File Form 8843 (EVERYONE Must)</h4><p>ALL F-1, J-1, F-2, and J-2 visa holders must file Form 8843 for 2025, even with zero US income. Deadline: April 15, 2026. Mail to: Department of the Treasury, Internal Revenue Service Center, Austin, TX 73301-0215.</p></div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content"><h4>File Form 1040-NR (If You Had US Income)</h4><p>Had wages, fellowship income, or US bank interest? File 1040-NR using Sprintax or Glacier (not TurboTax). Many universities provide Sprintax free. Deadline: April 15, 2026.</p></div></div>
+          <div class="step"><div class="step-num">5</div><div class="step-content"><h4>Check Your Tax Treaty Benefits</h4><p>The US has treaties with 65+ countries. China, India, South Korea, Germany, France, UK, Canada and many more. A treaty may exempt scholarship, fellowship, or wage income. Claim using Form 8233 (wages) or on 1040-NR (other income).</p></div></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="color:var(--white);font-family:'Playfair Display',serif;font-size:21px;margin-bottom:16px">By Visa Type</h3>
+        <div class="visa-grid">
+          <div class="visa-card"><div class="visa-type">F-1</div><div class="visa-name">Student Visa</div><p>Nonresident first 5 years. OPT/CPT wages taxable. Can't claim standard deduction (except India treaty). No FICA on campus jobs.</p></div>
+          <div class="visa-card"><div class="visa-type">J-1</div><div class="visa-name">Exchange Visitor</div><p>Nonresident first 2 of last 6 years. Includes scholars, researchers. Many treaty exemptions. File 8843 always.</p></div>
+          <div class="visa-card"><div class="visa-type">H-1B</div><div class="visa-name">Work Visa</div><p>Usually resident alien after ~1 year. File regular Form 1040. FICA applies. Can use TurboTax. All standard deductions apply.</p></div>
+          <div class="visa-card"><div class="visa-type">OPT</div><div class="visa-name">Optional Practical Training</div><p>F-1 OPT wages taxable (nonresident rules). FICA may be exempt during OPT. Keep strong documentation of status dates.</p></div>
+        </div>
+        <div style="background:rgba(201,147,58,.1);border:1px solid rgba(201,147,58,.25);border-radius:12px;padding:18px;margin-top:16px">
+          <h4 style="color:var(--gold2);font-family:'Playfair Display',serif;font-size:17px;margin-bottom:12px">⚖ Scholarship & Fellowship Tax Rules (2025)</h4>
+          <ul class="checklist">
+            <li><span class="ci" style="color:var(--gold2)">✓</span><span style="color:#b0bec5">Tuition & required fees: <strong style="color:var(--agent-text)">Not taxable</strong></span></li>
+            <li><span class="ci" style="color:var(--gold2)">✓</span><span style="color:#b0bec5">Room & board, stipends: <strong style="color:var(--agent-text)">Taxable</strong></span></li>
+            <li><span class="ci" style="color:var(--gold2)">✓</span><span style="color:#b0bec5">TA/RA wages: <strong style="color:var(--agent-text)">Taxable — withheld at 14%</strong></span></li>
+            <li><span class="ci" style="color:var(--gold2)">✓</span><span style="color:#b0bec5">Treaty may exempt all of the above — check yours!</span></li>
+          </ul>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:18px;margin-top:14px">
+          <h4 style="color:var(--white);font-family:'Playfair Display',serif;font-size:17px;margin-bottom:12px">🛠 Free Resources</h4>
+          <ul class="checklist">
+            <li><span class="ci" style="color:var(--teal2)">✓</span><span style="color:#b0bec5"><strong style="color:var(--agent-text)">Sprintax</strong> — Free through most universities</span></li>
+            <li><span class="ci" style="color:var(--teal2)">✓</span><span style="color:#b0bec5"><strong style="color:var(--agent-text)">Glacier Tax Prep</strong> — School-licensed software</span></li>
+            <li><span class="ci" style="color:var(--teal2)">✓</span><span style="color:#b0bec5"><strong style="color:var(--agent-text)">Your International Students Office</strong> — First stop</span></li>
+            <li><span class="ci" style="color:var(--teal2)">✓</span><span style="color:#b0bec5"><strong style="color:var(--agent-text)">IRS Publication 519</strong> — US Tax Guide for Aliens</span></li>
+            <li><span class="ci" style="color:var(--teal2)">✓</span><span style="color:#b0bec5"><strong style="color:var(--agent-text)">VITA</strong> — Free in-person help at many campuses</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ NEWS ══════════════════ -->
+<section id="news" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-tag">📰 Finance News</div>
+    <h2 class="section-title">Latest Tax & Finance News</h2>
+    <p class="section-sub">2025–2026 tax law changes, IRS updates, and financial news — explained so you know what actually affects you.</p>
+    <div class="news-grid">
+      <div class="news-feat">
+        <div class="news-feat-img">⚖️</div>
+        <div class="news-feat-body">
+          <span class="ntag nt-new">New Law 2025</span>
+          <h3>One Big Beautiful Bill Reshapes US Tax Law for 2025</h3>
+          <p>Signed July 4, 2025, the OBBB permanently extended TCJA rates, raised the standard deduction to $15,750 (single) and $31,500 (married), boosted the Child Tax Credit to $2,200, lifted the SALT cap to $40,000, and introduced no-tax treatment for qualifying tips and overtime wages.</p>
+          <div class="news-date">📅 July 2025 · Major Legislation</div>
+        </div>
+      </div>
+      <div class="news-list">
+        <div class="news-item reveal">
+          <span class="ntag nt-fin">Retirement</span>
+          <h4>Super Catch-Up: Ages 60–63 Can Save $11,250 Extra in 401(k)</h4>
+          <p>SECURE 2.0 provision kicks in for 2025. Workers aged 60–63 get a higher catch-up contribution limit of $11,250 (vs $7,500 for ages 50+).</p>
+          <div class="news-item-date">📅 January 2026</div>
+        </div>
+        <div class="news-item reveal">
+          <span class="ntag nt-audit">IRS</span>
+          <h4>IRS Direct File Now in 25 States for 2025 Returns</h4>
+          <p>The free IRS filing tool expanded significantly. Handles most simple returns. Available if income under $84,000 for 2025 season.</p>
+          <div class="news-item-date">📅 January 2026</div>
+        </div>
+        <div class="news-item reveal">
+          <span class="ntag nt-intl">International</span>
+          <h4>Crypto Reporting Now Mandatory on 2025 Returns — New Form 1099-DA</h4>
+          <p>Brokers must now issue Form 1099-DA for digital asset transactions. Every crypto sale, trade, and exchange must be reported on 2025 returns.</p>
+          <div class="news-item-date">📅 February 2026</div>
+        </div>
+        <div class="news-item reveal">
+          <span class="ntag nt-tax">SALT</span>
+          <h4>SALT Cap at $40,000 — High-Tax State Residents See Big Relief</h4>
+          <p>NY, CA, IL, NJ taxpayers who pay more than $10,000 in state/local taxes can now deduct up to $40,000 through 2029 under the OBBB.</p>
+          <div class="news-item-date">📅 August 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ AI IN TAX CAREERS ══════════════════ -->
+<section id="ai-career">
+  <div class="section-inner">
+    <div class="section-tag">⚖ AI in Taxation</div>
+    <h2 class="section-title">AI in Your Tax Career</h2>
+    <p class="section-sub">You don't need to become a programmer. But understanding AI tools will make you significantly more valuable as a tax professional in 2025 and beyond.</p>
+    <div class="ai-career-grid">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:24px;color:var(--navy);margin-bottom:24px">What Can You Build?</h3>
+        <div class="card-grid g2" style="gap:16px">
+          <div class="ai-path-card reveal"><div class="ai-path-icon">🔍</div><h3>AI Research Agent</h3><p>Like the one embedded below — ask a tax question, get a full memo with IRC citations, SALT analysis, and planning opportunities in 30 seconds.</p><div class="skill-chips"><span class="skill-chip">Claude API</span><span class="skill-chip">Prompt Engineering</span></div></div>
+          <div class="ai-path-card reveal"><div class="ai-path-icon">📄</div><h3>Document Processor</h3><p>Upload a K-1, 1040, or financial statement and have AI extract key figures, flag issues, and draft review notes automatically.</p><div class="skill-chips"><span class="skill-chip">PDF Parsing</span><span class="skill-chip">AI Extraction</span></div></div>
+          <div class="ai-path-card reveal"><div class="ai-path-icon">📊</div><h3>Provision Assistant</h3><p>AI that understands your tax provision model, explains variances, suggests journal entries, and checks ASC 740 compliance.</p><div class="skill-chips"><span class="skill-chip">Excel + AI</span><span class="skill-chip">ASC 740</span></div></div>
+          <div class="ai-path-card reveal"><div class="ai-path-icon">💬</div><h3>Client Q&A Bot</h3><p>An AI chatbot trained on your firm's knowledge base that answers routine client questions about filing deadlines, document checklists, and basic concepts.</p><div class="skill-chips"><span class="skill-chip">RAG</span><span class="skill-chip">Knowledge Base</span></div></div>
+          <div class="ai-path-card reveal"><div class="ai-path-icon">📅</div><h3>Deadline Tracker</h3><p>AI that monitors your client list, tracks all federal and state deadlines, and sends personalized reminders with checklists for each engagement.</p><div class="skill-chips"><span class="skill-chip">Automation</span><span class="skill-chip">Calendar API</span></div></div>
+          <div class="ai-path-card reveal"><div class="ai-path-icon">⚠️</div><h3>Audit Risk Scorer</h3><p>Feed a return's key metrics and have AI score the audit risk across 50+ IRS audit triggers, with explanations for each elevated risk factor.</p><div class="skill-chips"><span class="skill-chip">ML Scoring</span><span class="skill-chip">IRS Data</span></div></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:24px;color:var(--navy);margin-bottom:24px">Your Learning Roadmap</h3>
+        <div class="roadmap">
+          <div class="roadmap-step">
+            <div class="roadmap-num">1</div>
+            <div class="roadmap-body">
+              <h4>Start: Prompt Engineering</h4>
+              <p>Learn how to write clear, effective prompts for tax research, document review, and memo drafting. No coding needed. Immediate ROI.</p>
+              <span class="roadmap-badge">Week 1–2 · Free</span>
+            </div>
+          </div>
+          <div class="roadmap-step">
+            <div class="roadmap-num">2</div>
+            <div class="roadmap-body">
+              <h4>Claude in Excel + Browser</h4>
+              <p>Use Claude's native Excel plugin to analyze provision models, audit workpapers, and financial statements. Use Chrome plugin for research automation.</p>
+              <span class="roadmap-badge">Week 3–4 · Claude Pro Plan</span>
+            </div>
+          </div>
+          <div class="roadmap-step">
+            <div class="roadmap-num">3</div>
+            <div class="roadmap-body">
+              <h4>Basic Python or No-Code Tools</h4>
+              <p>Learn enough Python (via ChatGPT/Claude) to automate data extraction from PDFs. Or use no-code tools like Zapier + Claude API for workflows.</p>
+              <span class="roadmap-badge">Month 2 · Beginner</span>
+            </div>
+          </div>
+          <div class="roadmap-step">
+            <div class="roadmap-num">4</div>
+            <div class="roadmap-body">
+              <h4>Anthropic API + Simple Apps</h4>
+              <p>Build your own tools using the Claude API — like the research agent on this site. Start with a single-purpose tool: a tax question answerer or checklist generator.</p>
+              <span class="roadmap-badge">Month 3–4 · API Access</span>
+            </div>
+          </div>
+          <div class="roadmap-step">
+            <div class="roadmap-num">5</div>
+            <div class="roadmap-body">
+              <h4>RAG + Knowledge Base Systems</h4>
+              <p>Learn Retrieval Augmented Generation (RAG) to build AI that searches your firm's memos, past returns, and research. This is the real competitive advantage.</p>
+              <span class="roadmap-badge">Month 5–6 · Advanced</span>
+            </div>
+          </div>
+        </div>
+        <div class="tip info" style="margin-top:24px"><div class="tip-icon">💡</div><p><strong>Key Insight:</strong> You don't need to become an engineer. You need to understand what AI can do well (research, drafting, extraction, pattern recognition) and what it can't (judgment calls, signed opinions, client relationships). That hybrid expertise is extremely rare — and valuable.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     AI RESEARCH AGENT — EMBEDDED
+════════════════════════════════════════ -->
+<section id="agent" style="padding:0;background:var(--agent-bg)">
+  <div class="agent-section-header">
+    <div class="section-tag" style="justify-content:center;color:var(--agent-gold)">✦ AI-Powered</div>
+    <h2 class="section-title" style="color:var(--agent-text)">Tax Research Agent</h2>
+    <p class="section-sub" style="color:var(--agent-muted);margin:0 auto 0">Powered by Claude AI with live web search. Ask any tax question — get a structured research memo with IRC authority, SALT analysis across all 50 states, confidence rating, and planning opportunities. Specialized for pass-through entities, S-Corps, and partnerships.</p>
+  </div>
+  <div class="agent-wrap">
+
+    <!-- History -->
+    <div id="ag-history-wrap" style="display:none">
+      <div class="ag-card">
+        <div class="ag-label">RECENT RESEARCH</div>
+        <div id="ag-history-list"></div>
+      </div>
+    </div>
+
+    <!-- Input Card -->
+    <div class="ag-card">
+      <div class="ag-label">RESEARCH QUESTION</div>
+      <textarea id="ag-input" class="ag-textarea" placeholder="Ask any tax question... e.g. 'How does the SALT cap change under OBBB affect S-Corp shareholders in New York?'"
+        onkeydown="if((event.metaKey||event.ctrlKey)&&event.key==='Enter')runAgent()"></textarea>
+
+      <div class="ag-samples">
+        <button class="ag-sample-btn" onclick="setQ('Can an S-Corp deduct state taxes at the entity level under PTE elections?')">S-Corp PTE Elections</button>
+        <button class="ag-sample-btn" onclick="setQ('How is §199A QBI calculated for a partner in a service partnership in 2025?')">§199A QBI 2025</button>
+        <button class="ag-sample-btn" onclick="setQ('What are the basis limitation rules for S-Corp shareholders receiving K-1 losses?')">Basis Limitations</button>
+        <button class="ag-sample-btn" onclick="setQ('How does the new $40,000 SALT cap under the OBBB affect pass-through entities?')">SALT Cap OBBB</button>
+        <button class="ag-sample-btn" onclick="setQ('What is the no-tax on tips rule for 2025 and how is qualifying income determined?')">No Tax on Tips 2025</button>
+        <button class="ag-sample-btn" onclick="setQ('How do guaranteed payments to partners differ from wages for FICA and self-employment tax purposes?')">Guaranteed Payments</button>
+      </div>
+
+      <div class="ag-actions">
+        <div class="ag-hint">⌘/CTRL + ENTER TO RESEARCH</div>
+        <button class="ag-run-btn" id="ag-btn" onclick="runAgent()">RUN RESEARCH →</button>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="ag-loading" style="display:none">
+      <div class="ag-card ag-loading">
+        <div class="ag-spinner">⚙</div>
+        <div class="ag-stage" id="ag-stage-text">Identifying applicable authority...</div>
+        <div class="ag-progress"><div class="ag-progress-bar" id="ag-prog"></div></div>
+      </div>
+    </div>
+
+    <!-- Error -->
+    <div id="ag-error" style="display:none" class="ag-error"></div>
+
+    <!-- Results -->
+    <div id="ag-results" style="display:none" class="ag-results">
+
+      <!-- Memo Header -->
+      <div class="ag-card">
+        <div class="ag-memo-header">
+          <div class="ag-memo-date" id="ag-memo-date">TAX RESEARCH MEMORANDUM</div>
+          <button class="ag-copy-btn" id="ag-copy-btn" onclick="copyMemo()">COPY MEMO</button>
+        </div>
+        <div class="ag-issue" id="ag-issue"></div>
+        <div class="ag-summary" id="ag-summary"></div>
+
+        <!-- Confidence -->
+        <div class="ag-confidence" id="ag-confidence-wrap">
+          <div class="ag-conf-row">
+            <div class="ag-conf-label">CERTAINTY LEVEL</div>
+            <div class="ag-conf-bar-wrap"><div class="ag-conf-bar" id="ag-conf-bar"></div></div>
+            <div class="ag-conf-score" id="ag-conf-score"></div>
+          </div>
+          <div class="ag-conf-rationale" id="ag-conf-rationale"></div>
+        </div>
+      </div>
+
+      <!-- Authority Hierarchy -->
+      <div class="ag-card" id="ag-authority-card">
+        <div class="ag-label">AUTHORITY HIERARCHY</div>
+        <div id="ag-authority-list"></div>
+      </div>
+
+      <!-- Federal / SALT Tabs -->
+      <div class="ag-tabs">
+        <button class="ag-tab active" id="ag-tab-fed" onclick="switchAgTab('fed')">⚖ FEDERAL ANALYSIS</button>
+        <button class="ag-tab" id="ag-tab-salt" onclick="switchAgTab('salt')">🗺 SALT · ALL 50 STATES</button>
+      </div>
+      <div class="ag-tab-body">
+        <div id="ag-panel-fed"><div class="ag-federal-text" id="ag-federal-text"></div></div>
+        <div id="ag-panel-salt" style="display:none">
+          <div class="ag-conformity-box" id="ag-conformity"></div>
+          <div id="ag-state-vars"></div>
+          <div id="ag-risk-states"></div>
+        </div>
+      </div>
+
+      <!-- Follow-up Issues -->
+      <div class="ag-card" id="ag-followup-card">
+        <div class="ag-label">FOLLOW-UP ISSUES TO CONSIDER</div>
+        <div id="ag-followup-list"></div>
+      </div>
+
+      <!-- Planning Opportunities -->
+      <div class="ag-planning-box" id="ag-planning-box">
+        <div class="ag-planning-title">✦ PLANNING OPPORTUNITIES</div>
+        <div id="ag-planning-list"></div>
+      </div>
+
+      <!-- Caveats -->
+      <div class="ag-card" id="ag-caveats-card">
+        <div class="ag-label">IMPORTANT CAVEATS</div>
+        <div id="ag-caveats-list"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ GLOSSARY ══════════════════ -->
+<section id="glossary" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-tag">📖 Glossary</div>
+    <h2 class="section-title">Finance Terms, Plain English</h2>
+    <p class="section-sub">Every confusing term you've encountered — explained like a knowledgeable friend, not a textbook.</p>
+    <div class="search-wrap">
+      <input class="search-input" type="text" id="gloss-search" placeholder="Search a term (e.g. W-2, FICA, OBBB, QBI...)" oninput="filterGlossary()"/>
+      <button class="search-btn">🔍</button>
+    </div>
+    <div class="glossary-grid" id="gloss-grid">
+      <div class="gloss-card reveal" data-term="agi adjusted gross income"><div class="gloss-term">AGI</div><div class="gloss-def">Adjusted Gross Income — your total income minus specific deductions like IRA contributions or student loan interest. Used to calculate many tax benefits.</div><div class="gloss-ex">Example: $60,000 income − $3,000 IRA contribution = $57,000 AGI.</div></div>
+      <div class="gloss-card reveal" data-term="w-2 wage employer job"><div class="gloss-term">W-2</div><div class="gloss-def">Form your employer sends by January 31 showing wages earned and taxes withheld. You need this to file your 2025 return.</div><div class="gloss-ex">Box 1 = taxable wages. Box 2 = federal tax withheld.</div></div>
+      <div class="gloss-card reveal" data-term="1099 freelance contractor gig"><div class="gloss-term">1099</div><div class="gloss-def">Form for income NOT from an employer — freelance work, bank interest, dividends, crypto. No taxes withheld, so you may owe more at filing.</div><div class="gloss-ex">Client paid you $2,500 for work → they send 1099-NEC.</div></div>
+      <div class="gloss-card reveal" data-term="fica social security medicare payroll"><div class="gloss-term">FICA</div><div class="gloss-def">Federal Insurance Contributions Act — 7.65% taken from every paycheck: 6.2% Social Security + 1.45% Medicare. Your employer matches it.</div><div class="gloss-ex">On a $4,000 paycheck: $306 goes to FICA taxes.</div></div>
+      <div class="gloss-card reveal" data-term="obbb one big beautiful bill 2025 law"><div class="gloss-term">OBBB</div><div class="gloss-def">One Big Beautiful Bill — major tax legislation signed July 4, 2025. Raised standard deductions, boosted Child Tax Credit to $2,200, raised SALT cap to $40,000, eliminated tax on qualifying tips and overtime.</div><div class="gloss-ex">Affects all 2025 tax returns filed in 2026.</div></div>
+      <div class="gloss-card reveal" data-term="qbi qualified business income 199a deduction"><div class="gloss-term">§199A / QBI</div><div class="gloss-def">Qualified Business Income deduction — allows pass-through business owners (S-Corps, partnerships, sole proprietors) to deduct 20% of qualified business income. Made permanent by OBBB in 2025.</div><div class="gloss-ex">$100,000 in QBI → $20,000 deduction → saves ~$4,400 in taxes at 22%.</div></div>
+      <div class="gloss-card reveal" data-term="salt state local tax deduction cap"><div class="gloss-term">SALT Cap</div><div class="gloss-def">State and Local Tax deduction cap — limits how much state income/property tax you can deduct on your federal return. Was $10,000. Raised to <strong>$40,000 for 2025–2029</strong> by OBBB.</div><div class="gloss-ex">NY taxpayer paying $35,000 in state taxes can now deduct the full amount.</div></div>
+      <div class="gloss-card reveal" data-term="roth ira retirement tax free"><div class="gloss-term">Roth IRA</div><div class="gloss-def">Retirement account funded with after-tax money. Grows tax-free; withdrawals in retirement are 100% tax-free. 2025 limit: $7,000 ($8,000 if 50+).</div><div class="gloss-ex">$7,000 at age 25 could grow to $100,000+ by retirement — all tax-free.</div></div>
+      <div class="gloss-card reveal" data-term="capital gains investment profit tax rate"><div class="gloss-term">Capital Gains</div><div class="gloss-def">Profit from selling an investment. Short-term (under 1 year): taxed as regular income. Long-term (over 1 year): taxed at 0%, 15%, or 20%. 2025: 0% rate applies up to $48,350 single.</div><div class="gloss-ex">Bought stock at $10, sold at $25 after 2 years → $15 long-term capital gain.</div></div>
+      <div class="gloss-card reveal" data-term="itin tax id international nonresident"><div class="gloss-term">ITIN</div><div class="gloss-def">Individual Taxpayer Identification Number — 9-digit number (starts with 9) for people who need to file taxes but can't get a Social Security Number. Apply via Form W-7.</div><div class="gloss-ex">International student with no SSN → apply for ITIN to file Form 8843.</div></div>
+      <div class="gloss-card reveal" data-term="pte pass-through entity election salt workaround"><div class="gloss-term">PTE Election</div><div class="gloss-def">Pass-Through Entity tax election — available in most states, lets an S-Corp or partnership pay state income tax at the entity level. Shareholders/partners get a credit, effectively bypassing the federal SALT cap for business income.</div><div class="gloss-ex">Available in 36+ states including NY, CA, IL, NJ, TX, FL.</div></div>
+      <div class="gloss-card reveal" data-term="substantial presence test nonresident alien international student"><div class="gloss-term">Substantial Presence Test</div><div class="gloss-def">IRS formula to determine if an international person is a "resident alien" for US taxes. Count: 100% of current year days + 1/3 of last year + 1/6 of two years ago. Need 183+ days total.</div><div class="gloss-ex">F-1 students are exempt from this test for their first 5 calendar years in the US.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ DOWNLOADS & TEMPLATES ══════════════════ -->
+<section id="downloads" class="dark-bg">
+  <div class="section-inner">
+    <div class="section-tag">📥 Free Downloads</div>
+    <h2 class="section-title">Professional Templates & Worksheets</h2>
+    <p class="section-sub">Battle-tested Excel workbooks and Word templates used by tax professionals — free, no signup required.</p>
+    <div class="card-grid g3">
+      <div class="info-card reveal dl-card" style="background:var(--navy2);border-color:var(--navy3)">
+        <div class="card-icon ic-teal" style="font-size:28px">📊</div>
+        <h3 style="color:var(--white)">Partnership Basis Worksheet</h3>
+        <p style="color:#90a4ae">IRC §705 basis tracking for 5 years with §465 at-risk and §752 liability schedules. 1,460 formulas, auto-linked year-to-year. Sheet-protected with unlocked input cells.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
+          <span class="dl-tag">Excel (.xlsx)</span><span class="dl-tag">7 Sheets</span><span class="dl-tag">§704(d) Loss Limitation</span>
+        </div>
+        <a href="/downloads/Partnership_Basis_Worksheet_Template.xlsx" class="dl-btn" download>Download Template →</a>
+      </div>
+      <div class="info-card reveal dl-card" style="background:var(--navy2);border-color:var(--navy3)">
+        <div class="card-icon ic-gold" style="font-size:28px">📋</div>
+        <h3 style="color:var(--white)">ASC 740 Tax Provision Workbook</h3>
+        <p style="color:#90a4ae">Full provision summary (current + deferred), DTA/DTL roll-forward with valuation allowance, and ETR reconciliation per ASC 740-10-50. Formula-driven throughout.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
+          <span class="dl-tag">Excel (.xlsx)</span><span class="dl-tag">3 Sheets</span><span class="dl-tag">ETR Reconciliation</span>
+        </div>
+        <a href="/downloads/ASC740_Tax_Provision_Template.xlsx" class="dl-btn" download>Download Template →</a>
+      </div>
+      <div class="info-card reveal dl-card" style="background:var(--navy2);border-color:var(--navy3)">
+        <div class="card-icon ic-green" style="font-size:28px">📝</div>
+        <h3 style="color:var(--white)">Tax Research Memo</h3>
+        <p style="color:#90a4ae">7-section professional memo: Issue, Short Answer, Facts, Applicable Law, Analysis, Conclusion, Follow-Up. Formatted with authority hierarchy framework.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
+          <span class="dl-tag">Word (.docx)</span><span class="dl-tag">Authority Hierarchy</span><span class="dl-tag">OBBB-Ready</span>
+        </div>
+        <a href="/downloads/Tax_Research_Memo_Template.docx" class="dl-btn" download>Download Template →</a>
+      </div>
+      <div class="info-card reveal dl-card" style="background:var(--navy2);border-color:var(--navy3)">
+        <div class="card-icon ic-red" style="font-size:28px">🔍</div>
+        <h3 style="color:var(--white)">IRS Audit Response Letter</h3>
+        <p style="color:#90a4ae">Structured response template for CP notices and examination correspondence. Includes sections for each issue, taxpayer position, supporting docs, and requested relief.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
+          <span class="dl-tag">Word (.docx)</span><span class="dl-tag">CP Notice Response</span><span class="dl-tag">Exhibit-Ready</span>
+        </div>
+        <a href="/downloads/IRS_Audit_Response_Template.docx" class="dl-btn" download>Download Template →</a>
+      </div>
+      <div class="info-card reveal dl-card" style="background:var(--navy2);border-color:var(--navy3)">
+        <div class="card-icon ic-navy" style="font-size:28px;background:rgba(201,147,58,.15)">⚖️</div>
+        <h3 style="color:var(--white)">Penalty Abatement Request</h3>
+        <p style="color:#90a4ae">First-time penalty abatement (FTA) and reasonable cause request letters. Covers §6651 failure-to-file, failure-to-pay, and §6662 accuracy penalties with IRM citations.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0">
+          <span class="dl-tag">Word (.docx)</span><span class="dl-tag">FTA + Reasonable Cause</span><span class="dl-tag">IRM 20.1.1.3.6.1</span>
+        </div>
+        <a href="/downloads/Penalty_Abatement_Template.docx" class="dl-btn" download>Download Template →</a>
+      </div>
+    </div>
+    <div class="tip info" style="margin-top:32px;background:rgba(26,122,110,.08);border:1px solid rgba(26,122,110,.25)"><div class="tip-icon">💡</div><p style="color:#90a4ae"><strong style="color:var(--teal3)">All templates are free.</strong> Excel workbooks are formula-driven with sheet protection (password: basis / asc740). Word docs have blue placeholder fields — replace with your details. These are starting points, not legal advice.</p></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="disclaimer-footer"><p>⚖️ <strong style="color:#b0bec5">Disclaimer:</strong> TaxClarity provides general educational information for Tax Year 2025, filed April 15, 2026. This is not professional tax, legal, or financial advice. Tax laws change — information reflects OBBB (signed July 4, 2025) and IRS guidance current as of early 2026. Consult a qualified CPA, Enrolled Agent, or tax attorney for your specific situation. International students should consult their university's International Students Office.</p></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:'Playfair Display',serif;font-size:24px;color:#fff;font-weight:700;display:flex;align-items:center;gap:10px"><span style="background:linear-gradient(135deg,#b8963e,#d4af6a);width:34px;height:34px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:17px">⚖</span>Tax<span style="color:var(--gold2)">Nook</span></div>
+        <p>Tax Year 2025 guidance for everyone — especially those navigating the US system for the first time. Now with an embedded AI research agent.</p>
+        <div class="social-links" style="margin-top:16px">
+          <a class="social-link" href="#">𝕏</a>
+          <a class="social-link" href="#">in</a>
+          <a class="social-link" href="#">▶</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Tax Year 2025</h4><ul><li><a href="#taxes">Filing Basics</a></li><li><a href="#taxes">2025 Tax Brackets</a></li><li><a href="#taxes">OBBB New Laws</a></li><li><a href="#business">S-Corps & Partnerships</a></li><li><a href="#business">ASC 740 Provisions</a></li></ul></div>
+      <div class="footer-col"><h4>Tools & Planning</h4><ul><li><a href="#calculator">Tax Calculator</a></li><li><a href="#calculator">SE Tax Calculator</a></li><li><a href="#calculator">Withholding Check</a></li><li><a href="#downloads">Templates & Downloads</a></li><li><a href="#planning">Retirement 2025</a></li></ul></div>
+      <div class="footer-col"><h4>International</h4><ul><li><a href="#international">F-1 Visa Guide</a></li><li><a href="#international">J-1 Visa Guide</a></li><li><a href="#international">Form 8843</a></li><li><a href="#international">Tax Treaties</a></li><li><a href="#international">ITIN Guide</a></li></ul></div>
+      <div class="footer-col"><h4>Research</h4><ul><li><a href="#agent">AI Tax Agent</a></li><li><a href="#ai-career">AI in Tax Careers</a></li><li><a href="#news">Finance News</a></li><li><a href="#glossary">Glossary</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TaxClarity · Tax Year 2025 · Educational content only</p>
+      <p>Not affiliated with the IRS or any government agency</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════ -->
+<script src="/js/app.js"></script>
+</body>
+</html>
