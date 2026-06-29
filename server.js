@@ -299,7 +299,7 @@ app.post("/api/research", agentLimiter, async (req, res) => {
       },
       body: JSON.stringify({
         model: "claude-sonnet-4-6",
-        max_tokens: 10000,
+        max_tokens: 8000,
         system: AGENT_SYSTEM,
         messages: [{ role: "user", content: `Tax research question for Tax Year 2025 (OBBB applies). Reply with JSON only, starting with {:\n\n${question.trim()}` }],
       }),
@@ -314,6 +314,7 @@ app.post("/api/research", agentLimiter, async (req, res) => {
 
     const data = await anthropicRes.json();
     const content = (data.content || []).filter(b => b.type === "text").map(b => b.text).join("");
+    console.log("RAW AI CONTENT >>>", content);
 
     let parsed;
     try {
