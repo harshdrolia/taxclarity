@@ -299,7 +299,7 @@ app.post("/api/research", agentLimiter, async (req, res) => {
       },
       body: JSON.stringify({
         model: "claude-sonnet-4-6",
-        max_tokens: 4000,
+        max_tokens: 10000,
         system: AGENT_SYSTEM,
         messages: [{ role: "user", content: `Tax research question for Tax Year 2025 (OBBB applies). Reply with JSON only, starting with {:\n\n${question.trim()}` }],
       }),
