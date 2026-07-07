@@ -325,7 +325,7 @@ app.post("/api/research", agentLimiter, async (req, res) => {
   const useWebSearch = process.env.ENABLE_WEB_SEARCH === "true";
 
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 90000);
+  const timeout = setTimeout(() => controller.abort(), Number(process.env.RESEARCH_TIMEOUT_MS) || 240000);;
   try {
     const body = {
       model: process.env.AGENT_MODEL || "claude-sonnet-4-6",
