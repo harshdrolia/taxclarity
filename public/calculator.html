@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Draft Return Builder — Free 2025 & 2026 Form 1040 Estimator | TaxClarity</title>
+<meta name="description" content="Build an educational draft Form 1040 line by line: wages, self-employment, capital gains, QBI, credits, safe harbor. Free, no signup, TY2025 and TY2026."/>
+<link rel="canonical" href="https://taxclarity.onrender.com/calculator.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="TaxClarity"/>
+<meta property="og:title" content="Draft Return Builder — Free 2025 & 2026 Form 1040 Estimator | TaxClarity"/>
+<meta property="og:description" content="Build an educational draft Form 1040 line by line: wages, self-employment, capital gains, QBI, credits, safe harbor. Free, no signup, TY2025 and TY2026."/>
+<meta property="og:url" content="https://taxclarity.onrender.com/calculator.html"/>
+<meta property="og:image" content="https://taxclarity.onrender.com/assets/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Draft Return Builder — Free 2025 & 2026 Form 1040 Estimator | TaxClarity"/>
+<meta name="twitter:description" content="Build an educational draft Form 1040 line by line: wages, self-employment, capital gains, QBI, credits, safe harbor. Free, no signup, TY2025 and TY2026."/>
+<meta name="twitter:image" content="https://taxclarity.onrender.com/assets/og-image.png"/>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/css/statute.css"/>
+
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/"><span class="logo-mark">§</span>Tax<em>Clarity</em></a>
+    <div class="search-box">
+      <input id="nav-search" type="text" placeholder="Search the Code, forms, guides…" autocomplete="off" aria-label="Search TaxClarity"/>
+      <div class="search-results" id="nav-search-results"></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/guides.html" >Guides</a></li>
+      <li><a href="/calculator.html" class="active">Calculator</a></li>
+      <li><a href="/glossary.html" >Glossary</a></li>
+      <li><a href="/about.html" >About</a></li>
+      <li><a href="/research.html" class="cta">Research →</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/guides.html">Guides</a>
+    <a href="/calculator.html">Draft Return Builder</a>
+    <a href="/research.html">AI Research &amp; Authorities</a>
+    <a href="/glossary.html">Glossary</a>
+    <a href="/about.html">About &amp; Contact</a>
+  </div>
+</nav>
+<section>
+  <div class="section-inner">
+    <div class="section-tag">Draft Return Builder</div>
+    <h2 class="section-title">Build a draft Form 1040, line by line</h2>
+    <p class="section-sub">Enter what you have — the draft recomputes as you type and maps every number to its actual 1040 line. Educational estimate for planning and understanding, not filing software.</p>
+
+    <div style="margin-bottom:26px;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+      <span class="form-label" style="margin:0">Tax year</span>
+      <div class="year-toggle">
+        <button class="active" onclick="setYear(2025,this)">2025</button>
+        <button onclick="setYear(2026,this)">2026</button>
+      </div>
+      <span style="font-size:13px;color:var(--ink3)">2025 files by Apr 15, 2026 · 2026 figures per Rev. Proc. 2025-32</span>
+    </div>
+
+    <div class="builder">
+      <div class="builder-form">
+
+        <div class="bstep open">
+          <button class="bstep-head" onclick="toggleStep(this)">
+            <span class="bstep-num">1</span>
+            <span><span class="bstep-title">Filing status &amp; household</span><br/><span class="bstep-sub">Status, dependents, age</span></span>
+          </button>
+          <div class="bstep-body">
+            <div class="form-group">
+              <label class="form-label" for="f-status">Filing status</label>
+              <select class="form-input" id="f-status">
+                <option value="single">Single</option>
+                <option value="marriedFilingJointly">Married filing jointly</option>
+                <option value="marriedFilingSeparately">Married filing separately</option>
+                <option value="headOfHousehold">Head of household</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="f-kids">Children under 17</label><input class="form-input" id="f-kids" type="number" min="0" value="0"/></div>
+              <div class="form-group"><label class="form-label" for="f-odeps">Other dependents</label><input class="form-input" id="f-odeps" type="number" min="0" value="0"/></div>
+            </div>
+            <label class="check-row"><input type="checkbox" id="f-t65"/> I'm 65 or older</label>
+            <label class="check-row"><input type="checkbox" id="f-s65"/> Spouse is 65 or older</label>
+            <label class="check-row"><input type="checkbox" id="f-tblind"/> I'm blind</label>
+            <label class="check-row"><input type="checkbox" id="f-sblind"/> Spouse is blind</label>
+            <label class="check-row"><input type="checkbox" id="f-age50"/> I'm 50 or older (retirement catch-ups)</label>
+          </div>
+        </div>
+
+        <div class="bstep">
+          <button class="bstep-head" onclick="toggleStep(this)">
+            <span class="bstep-num">2</span>
+            <span><span class="bstep-title">Income</span><br/><span class="bstep-sub">Wages, investments, self-employment, K-1s</span></span>
+          </button>
+          <div class="bstep-body">
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="i-wages">W-2 wages (box 1)</label><input class="form-input" id="i-wages" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="i-interest">Taxable interest</label><input class="form-input" id="i-interest" type="number" min="0" placeholder="0"/></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="i-orddiv">Ordinary dividends</label><input class="form-input" id="i-orddiv" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="i-qualdiv">…of which qualified</label><input class="form-input" id="i-qualdiv" type="number" min="0" placeholder="0"/></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="i-stcg">Short-term capital gain <span class="hint">(loss as negative)</span></label><input class="form-input" id="i-stcg" type="number" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="i-ltcg">Long-term capital gain <span class="hint">(loss as negative)</span></label><input class="form-input" id="i-ltcg" type="number" placeholder="0"/></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="i-scgross">Self-employment gross (Sch C)</label><input class="form-input" id="i-scgross" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="i-scexp">Self-employment expenses</label><input class="form-input" id="i-scexp" type="number" min="0" placeholder="0"/></div>
+            </div>
+            <label class="check-row"><input type="checkbox" id="i-sstb"/> Business is a specified service (SSTB — law, accounting, consulting, health…)</label>
+            <div class="form-group"><label class="form-label" for="i-w2paid">W-2 wages the business pays <span class="hint">(only matters above §199A thresholds)</span></label><input class="form-input" id="i-w2paid" type="number" min="0" placeholder="0"/></div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="i-k1np">K-1 nonpassive income</label><input class="form-input" id="i-k1np" type="number" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="i-k1p">K-1 passive / rental K-1</label><input class="form-input" id="i-k1p" type="number" placeholder="0"/></div>
+            </div>
+            <label class="check-row"><input type="checkbox" id="i-k1se"/> K-1 nonpassive income is subject to SE tax (general partner / active LLC member)</label>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="i-rental">Direct rental net income</label><input class="form-input" id="i-rental" type="number" placeholder="0"/></div>
+              <div class="form-group" style="display:flex;align-items:flex-end"><label class="check-row"><input type="checkbox" id="i-rentalqbi"/> Rental qualifies for QBI</label></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="i-ira">IRA distributions (taxable)</label><input class="form-input" id="i-ira" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="i-pension">Pensions (taxable)</label><input class="form-input" id="i-pension" type="number" min="0" placeholder="0"/></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="i-ss">Social Security benefits (gross)</label><input class="form-input" id="i-ss" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="i-teinterest">Tax-exempt interest</label><input class="form-input" id="i-teinterest" type="number" min="0" placeholder="0"/></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="i-unemp">Unemployment</label><input class="form-input" id="i-unemp" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="i-other">Other income</label><input class="form-input" id="i-other" type="number" placeholder="0"/></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bstep">
+          <button class="bstep-head" onclick="toggleStep(this)">
+            <span class="bstep-num">3</span>
+            <span><span class="bstep-title">Adjustments</span><br/><span class="bstep-sub">HSA, IRA, student loan interest</span></span>
+          </button>
+          <div class="bstep-body">
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="a-hsa">HSA contribution (outside payroll)</label><input class="form-input" id="a-hsa" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="f-hsatype">HSA coverage</label><select class="form-input" id="f-hsatype"><option value="self">Self-only</option><option value="family">Family</option></select></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="a-ira">Traditional IRA contribution</label><input class="form-input" id="a-ira" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="a-sli">Student loan interest paid</label><input class="form-input" id="a-sli" type="number" min="0" placeholder="0"/></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="a-sehealth">SE health insurance premiums</label><input class="form-input" id="a-sehealth" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="a-educator">Educator expenses</label><input class="form-input" id="a-educator" type="number" min="0" placeholder="0"/></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bstep">
+          <button class="bstep-head" onclick="toggleStep(this)">
+            <span class="bstep-num">4</span>
+            <span><span class="bstep-title">Deductions</span><br/><span class="bstep-sub">Standard vs. itemized — we pick the better one</span></span>
+          </button>
+          <div class="bstep-body">
+            <div class="form-group">
+              <label class="form-label" for="d-mode">Method</label>
+              <select class="form-input" id="d-mode">
+                <option value="auto">Auto — use whichever is larger</option>
+                <option value="standard">Force standard</option>
+                <option value="itemize">Force itemized</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="d-salt">State &amp; local taxes paid (SALT)</label><input class="form-input" id="d-salt" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="d-mortgage">Mortgage interest</label><input class="form-input" id="d-mortgage" type="number" min="0" placeholder="0"/></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="d-charity">Charitable gifts (cash)</label><input class="form-input" id="d-charity" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="d-medical">Medical expenses (unreimbursed)</label><input class="form-input" id="d-medical" type="number" min="0" placeholder="0"/></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bstep">
+          <button class="bstep-head" onclick="toggleStep(this)">
+            <span class="bstep-num">5</span>
+            <span><span class="bstep-title">OBBBA deductions</span><br/><span class="bstep-sub">Tips, overtime, car-loan interest (2025–2028)</span></span>
+          </button>
+          <div class="bstep-body">
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="o-tips">Qualified tips received</label><input class="form-input" id="o-tips" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="o-ot">Overtime premium pay</label><input class="form-input" id="o-ot" type="number" min="0" placeholder="0"/></div>
+            </div>
+            <div class="form-group"><label class="form-label" for="o-car">Car-loan interest <span class="hint">(new, U.S.-assembled, personal use)</span></label><input class="form-input" id="o-car" type="number" min="0" placeholder="0"/></div>
+          </div>
+        </div>
+
+        <div class="bstep">
+          <button class="bstep-head" onclick="toggleStep(this)">
+            <span class="bstep-num">6</span>
+            <span><span class="bstep-title">Credits &amp; payments</span><br/><span class="bstep-sub">Withholding, estimates, education, safe harbor</span></span>
+          </button>
+          <div class="bstep-body">
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="p-wh">Federal withholding (W-2 box 2 + 1099)</label><input class="form-input" id="p-wh" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="p-est">Estimated payments made</label><input class="form-input" id="p-est" type="number" min="0" placeholder="0"/></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="c-care">Child &amp; dependent care expenses</label><input class="form-input" id="c-care" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="c-ftc">Foreign tax paid (passive, ≤$600)</label><input class="form-input" id="c-ftc" type="number" min="0" placeholder="0"/></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="c-aotc">AOTC tuition (per student, first 4 yrs)</label><input class="form-input" id="c-aotc" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="c-llc">Lifetime Learning tuition</label><input class="form-input" id="c-llc" type="number" min="0" placeholder="0"/></div>
+            </div>
+            <div class="form-group"><label class="form-label" for="c-othernr">Other nonrefundable credits</label><input class="form-input" id="c-othernr" type="number" min="0" placeholder="0"/></div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="p-pytax">Last year's total tax <span class="hint">(for safe harbor)</span></label><input class="form-input" id="p-pytax" type="number" min="0" placeholder="0"/></div>
+              <div class="form-group"><label class="form-label" for="p-pyagi">Last year's AGI</label><input class="form-input" id="p-pyagi" type="number" min="0" placeholder="0"/></div>
+            </div>
+            <div class="form-group"><label class="form-label" for="p-ext">Paid with extension</label><input class="form-input" id="p-ext" type="number" min="0" placeholder="0"/></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div>
+        <div class="d1040">
+          <div class="d1040-head"><h3>Draft Form 1040</h3><span class="yr" id="d1040-year">TY 2025</span></div>
+          <div class="dstat" id="d1040-stat"></div>
+          <div class="d1040-body" id="d1040-body"><div class="dline"><span class="lbl">Enter income on the left — the draft builds itself.</span></div></div>
+          <div class="d1040-foot" id="d1040-extra"></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:14px">
+          <button class="btn btn-ghost" id="copy-btn" onclick="copyDraft()">Copy draft</button>
+          <button class="btn btn-ghost" onclick="window.print()">Print / PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="results-wrap" style="display:none;margin-top:34px">
+      <h3 style="font-size:20px">Notes on this draft</h3>
+      <ul class="diaglist" id="diag"></ul>
+    </div>
+
+    <div class="authority-note"><b>Authority</b><span>Rates &amp; figures: IRC §1, §63, §199A; Rev. Proc. 2024-40 (TY2025) and Rev. Proc. 2025-32 (TY2026) as modified by OBBBA (P.L. 119-21). This tool simplifies: §469 passive limits, UBIA, Form 1116 limitations and AMT preferences beyond SALT are flagged, not fully computed. It never files anything.</span></div>
+  </div>
+</section>
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">§ Tax<em>Clarity</em></div>
+      <p class="foot-tag">Taxes, finally made clear. Free, cited, and built by a practitioner.</p>
+      <form class="newsletter" id="nl-form" onsubmit="return subscribeNews(event,'nl-form','nl-msg')">
+        <input type="email" placeholder="you@email.com" required aria-label="Email for updates"/>
+        <button type="submit">Join</button>
+      </form>
+      <div class="form-msg" id="nl-msg"></div>
+    </div>
+    <div>
+      <h5>Learn</h5>
+      <a href="/guides.html#taxes">Individual taxes</a>
+      <a href="/guides.html#business">Business &amp; entities</a>
+      <a href="/guides.html#international">International students</a>
+      <a href="/glossary.html">Glossary</a>
+    </div>
+    <div>
+      <h5>Tools</h5>
+      <a href="/calculator.html">Draft Return Builder</a>
+      <a href="/research.html">AI Research Agent</a>
+      <a href="/research.html#authorities">Authority Directory</a>
+      <a href="/guides.html#downloads">Free templates</a>
+    </div>
+    <div>
+      <h5>Site</h5>
+      <a href="/about.html">About &amp; standards</a>
+      <a href="/about.html#contact">Contact</a>
+      <a href="/about.html#legal">Disclaimer &amp; privacy</a>
+    </div>
+  </div>
+  <div class="foot-legal">
+    <div class="foot-legal-inner">© 2026 TaxClarity · Educational information, not tax advice — see <a href="/about.html#legal" style="display:inline;padding:0">full disclaimer</a>. Figures per Rev. Proc. 2024-40 / 2025-32 as modified by OBBBA (P.L. 119-21). Content last reviewed July 2026. Statute &amp; regulation links courtesy of Cornell LII; forms via IRS.gov.</div>
+  </div>
+</footer>
+<script src="/js/site.js"></script><script src="/js/draft1040.js"></script>
+</body>
+</html>

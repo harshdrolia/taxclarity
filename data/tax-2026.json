@@ -1,0 +1,185 @@
+{
+  "meta": {
+    "taxYear": 2026,
+    "filingYear": 2027,
+    "filingDeadline": "April 15, 2027",
+    "extensionDeadline": "October 15, 2027",
+    "lastUpdated": "2026-07-03",
+    "majorLegislation": "One Big Beautiful Bill Act (OBBBA, P.L. 119-21)",
+    "legislationDate": "July 4, 2025",
+    "primarySource": "Rev. Proc. 2025-32 (released Oct 9, 2025); SSA 2026 wage base announcement",
+    "version": "3.0.0",
+    "verifyFlags": [
+      "brackets.headOfHousehold mid-tier thresholds interpolated — confirm against Rev. Proc. 2025-32 §4.01 tables",
+      "capitalGains.longTerm 2026 breakpoints estimated at +2.3% over 2025 — confirm against Rev. Proc. 2025-32 §4.03",
+      "credits.eitc sub-maximums for 0/1/2 children estimated — confirm §4.06 table",
+      "retirement limits from Notice 2025-67 recollection — confirm 401(k) $24,500 / IRA $7,500 / catch-ups",
+      "saltCap.phaseoutMAGI 2026 indexed value estimated at $505,000 — confirm",
+      "stateInfo copied from 2025 — confirm current-year state rates"
+    ]
+  },
+  "standardDeductions": {
+    "single": 16100,
+    "marriedFilingJointly": 32200,
+    "marriedFilingSeparately": 16100,
+    "headOfHousehold": 24150,
+    "over65Bonus": 2050,
+    "over65BonusMarriedPerSpouse": 1650,
+    "blindBonus": 2050,
+    "blindBonusMarriedPerSpouse": 1650,
+    "seniorBonus": { "amount": 6000, "phaseoutSingle": 75000, "phaseoutMFJ": 150000, "phaseoutRate": 0.06, "years": "2025-2028", "note": "OBBBA §70103 senior deduction — available whether itemizing or not, per taxpayer 65+" }
+  },
+  "brackets": {
+    "single": [
+      { "rate": 0.10, "min": 0, "max": 12400 },
+      { "rate": 0.12, "min": 12400, "max": 50400 },
+      { "rate": 0.22, "min": 50400, "max": 105700 },
+      { "rate": 0.24, "min": 105700, "max": 201775 },
+      { "rate": 0.32, "min": 201775, "max": 256225 },
+      { "rate": 0.35, "min": 256225, "max": 640600 },
+      { "rate": 0.37, "min": 640600, "max": null }
+    ],
+    "marriedFilingJointly": [
+      { "rate": 0.10, "min": 0, "max": 24800 },
+      { "rate": 0.12, "min": 24800, "max": 100800 },
+      { "rate": 0.22, "min": 100800, "max": 211400 },
+      { "rate": 0.24, "min": 211400, "max": 403550 },
+      { "rate": 0.32, "min": 403550, "max": 512450 },
+      { "rate": 0.35, "min": 512450, "max": 768700 },
+      { "rate": 0.37, "min": 768700, "max": null }
+    ],
+    "marriedFilingSeparately": [
+      { "rate": 0.10, "min": 0, "max": 12400 },
+      { "rate": 0.12, "min": 12400, "max": 50400 },
+      { "rate": 0.22, "min": 50400, "max": 105700 },
+      { "rate": 0.24, "min": 105700, "max": 201775 },
+      { "rate": 0.32, "min": 201775, "max": 256225 },
+      { "rate": 0.35, "min": 256225, "max": 384350 },
+      { "rate": 0.37, "min": 384350, "max": null }
+    ],
+    "headOfHousehold": [
+      { "rate": 0.10, "min": 0, "max": 17700 },
+      { "rate": 0.12, "min": 17700, "max": 67450 },
+      { "rate": 0.22, "min": 67450, "max": 105700 },
+      { "rate": 0.24, "min": 105700, "max": 201775 },
+      { "rate": 0.32, "min": 201775, "max": 256200 },
+      { "rate": 0.35, "min": 256200, "max": 640600 },
+      { "rate": 0.37, "min": 640600, "max": null }
+    ]
+  },
+  "capitalGains": {
+    "shortTerm": "Taxed at ordinary income rates",
+    "longTerm": {
+      "rate0": { "single": 49450, "marriedFilingJointly": 98900, "marriedFilingSeparately": 49450, "headOfHousehold": 66200 },
+      "rate15": { "single": 545500, "marriedFilingJointly": 613700, "marriedFilingSeparately": 306850, "headOfHousehold": 578750 }
+    },
+    "niit": { "rate": 0.038, "thresholdSingle": 200000, "thresholdMFJ": 250000, "thresholdMFS": 125000, "note": "IRC §1411 thresholds are not inflation-indexed" }
+  },
+  "selfEmployment": {
+    "seTaxRate": 0.153,
+    "socialSecurityWageBase": 184500,
+    "socialSecurityRate": 0.124,
+    "medicareRate": 0.029,
+    "additionalMedicareThresholdSingle": 200000,
+    "additionalMedicareThresholdMFJ": 250000,
+    "additionalMedicareThresholdMFS": 125000,
+    "additionalMedicareRate": 0.009,
+    "netEarningsFactor": 0.9235,
+    "halfSEDeduction": true
+  },
+  "retirement": {
+    "k401Limit": 24500,
+    "k401CatchUp50Plus": 8000,
+    "k401SuperCatchUp60to63": 11250,
+    "k403bLimit": 24500,
+    "iraLimit": 7500,
+    "iraCatchUp50Plus": 1100,
+    "sepIraMaxContribution": 72000,
+    "solo401kEmployeeLimit": 24500,
+    "hsaSelfOnly": 4400,
+    "hsaFamily": 8750,
+    "hsaCatchUp55Plus": 1000,
+    "fsaLimit": 3400,
+    "fsaCarryover": 680
+  },
+  "credits": {
+    "childTaxCredit": { "amount": 2200, "refundable": 1700, "ageLimit": 17, "phaseoutSingle": 200000, "phaseoutMFJ": 400000, "phaseoutRatePer1000": 50, "otherDependentCredit": 500 },
+    "eitc": { "max3Children": 8231, "max2Children": 7316, "max1Child": 4427, "maxNoChildren": 664, "investmentIncomeLimit": 12200 },
+    "education": {
+      "aotc": { "max": 2500, "refundablePortion": 1000, "phaseoutSingle": [80000, 90000], "phaseoutMFJ": [160000, 180000] },
+      "llc": { "max": 2000, "phaseoutSingle": [80000, 90000], "phaseoutMFJ": [160000, 180000], "note": "LLC phaseout not indexed after 2020" }
+    },
+    "childDependentCare": { "maxExpenses1": 3000, "maxExpenses2Plus": 6000, "ratePctRange": "20-35%" },
+    "adoption": { "max": 17670, "refundablePortion": 5120 },
+    "obbbaDeductions": {
+      "tips": { "max": 25000, "phaseoutSingle": 150000, "phaseoutMFJ": 300000, "years": "2025-2028" },
+      "overtime": { "maxSingle": 12500, "maxMFJ": 25000, "phaseoutSingle": 150000, "phaseoutMFJ": 300000, "years": "2025-2028" },
+      "carLoanInterest": { "max": 10000, "phaseoutSingle": 100000, "phaseoutMFJ": 200000, "years": "2025-2028", "note": "New personal-use vehicles with final assembly in the U.S." }
+    }
+  },
+  "amt": {
+    "exemptionSingle": 90100,
+    "exemptionMFJ": 140200,
+    "exemptionMFS": 70100,
+    "phaseoutSingle": 500000,
+    "phaseoutMFJ": 1000000,
+    "phaseoutRate": 0.50,
+    "rate28PctThreshold": 244500,
+    "note": "OBBBA reset phaseout thresholds to $500K/$1M and accelerated phaseout to 50% beginning 2026"
+  },
+  "saltCap": {
+    "amount": 40400,
+    "phaseoutMAGI": 505000,
+    "phaseoutRate": 0.30,
+    "floor": 10000,
+    "years": "2025-2029",
+    "revertAmount": 10000,
+    "revertYear": 2030,
+    "note": "OBBBA cap: $40,000 (2025) escalating 1%/yr; benefit phases down 30% above MAGI threshold but never below $10,000"
+  },
+  "qbi": {
+    "deductionRate": 0.20,
+    "thresholdSingle": 201775,
+    "thresholdMFJ": 403550,
+    "phaseInRangeSingle": 75000,
+    "phaseInRangeMFJ": 150000,
+    "note": "§199A made permanent by OBBBA; OBBBA widened phase-in ranges to $75K/$150K"
+  },
+  "giftEstate": {
+    "annualGiftExclusion": 19000,
+    "lifetimeExemption": 15000000,
+    "topRate": 0.40,
+    "note": "OBBBA set basic exclusion at $15M per individual for 2026, indexed thereafter"
+  },
+  "penalties": {
+    "failureToFile": "5% per month up to 25% of unpaid tax",
+    "failureToFileFraud": "15% per month up to 75%",
+    "failureToPay": "0.5% per month up to 25%",
+    "estimatedTaxPenalty": "Underpayment rate (federal short-term rate + 3%) computed on Form 2210",
+    "safeHarbor": "Pay 90% of current-year tax or 100% of prior-year tax (110% if prior-year AGI over $150K)"
+  },
+  "deadlines": [
+    { "date": "2026-09-15", "label": "Sep 15, 2026", "desc": "Q3 2026 estimated tax due; extended 1065 & 1120-S returns due", "icon": "§" },
+    { "date": "2026-10-15", "label": "Oct 15, 2026", "desc": "Extended 2025 individual returns (Form 1040) due", "icon": "§" },
+    { "date": "2027-01-15", "label": "Jan 15, 2027", "desc": "Q4 2026 estimated tax due", "icon": "§" },
+    { "date": "2027-01-31", "label": "Jan 31, 2027", "desc": "W-2s and 1099s due to recipients", "icon": "§" },
+    { "date": "2027-03-15", "label": "Mar 15, 2027", "desc": "Partnership (1065) and S-corp (1120-S) returns due", "icon": "§" },
+    { "date": "2027-04-15", "label": "Apr 15, 2027", "desc": "2026 individual returns due; Q1 2027 estimated tax due", "icon": "§" }
+  ],
+  "obbbChanges": [
+    { "title": "Standard deduction (2026)", "detail": "$16,100 single / $32,200 MFJ / $24,150 HOH — permanent structure, indexed annually", "impact": "high" },
+    { "title": "Child Tax Credit", "detail": "$2,200 per qualifying child ($1,700 refundable), now inflation-indexed", "impact": "high" },
+    { "title": "SALT cap", "detail": "$40,400 for 2026 (1%/yr escalator through 2029), 30% phasedown above ~$505K MAGI, $10K floor", "impact": "high" },
+    { "title": "AMT phaseout reset", "detail": "Exemption phaseout now begins at $500K/$1M at a faster 50% rate — a quiet 2026 tax increase for some", "impact": "medium" },
+    { "title": "Senior deduction", "detail": "$6,000 per taxpayer 65+, phases out 6% above $75K/$150K MAGI (2025–2028)", "impact": "medium" },
+    { "title": "Tips, overtime & car-loan interest", "detail": "Deductions continue for 2026: tips up to $25K; overtime premium $12.5K/$25K; U.S.-assembled car loan interest up to $10K", "impact": "medium" },
+    { "title": "Estate & gift", "detail": "$15M basic exclusion per person for 2026; $19K annual gift exclusion", "impact": "medium" },
+    { "title": "§199A QBI", "detail": "20% deduction permanent; phase-in thresholds $201,775 / $403,550 with widened $75K/$150K ranges", "impact": "high" }
+  ],
+  "stateInfo": {
+    "noIncomeTax": ["AK", "FL", "NV", "NH", "SD", "TN", "TX", "WA", "WY"],
+    "flatTax": { "CO": 4.4, "IL": 4.95, "IN": 3.05, "KY": 4.0, "MA": 5.0, "MI": 4.25, "NC": 4.5, "PA": 3.07, "UT": 4.65 },
+    "highestRates": { "CA": 13.3, "HI": 11.0, "NY": 10.9, "NJ": 10.75, "OR": 9.9 },
+    "_verify": "Copied from TY2025 file — confirm current-year state rates before publishing"
+  }
+}

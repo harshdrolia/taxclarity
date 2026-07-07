@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Tax Research with Linked Citations + Authority Directory | TaxClarity</title>
+<meta name="description" content="Ask a tax research question and get a structured memo where every cited IRC section, regulation, and form links to the primary source. Plus a plain-English directory of the Code."/>
+<link rel="canonical" href="https://taxclarity.onrender.com/research.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="TaxClarity"/>
+<meta property="og:title" content="AI Tax Research with Linked Citations + Authority Directory | TaxClarity"/>
+<meta property="og:description" content="Ask a tax research question and get a structured memo where every cited IRC section, regulation, and form links to the primary source. Plus a plain-English directory of the Code."/>
+<meta property="og:url" content="https://taxclarity.onrender.com/research.html"/>
+<meta property="og:image" content="https://taxclarity.onrender.com/assets/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI Tax Research with Linked Citations + Authority Directory | TaxClarity"/>
+<meta name="twitter:description" content="Ask a tax research question and get a structured memo where every cited IRC section, regulation, and form links to the primary source. Plus a plain-English directory of the Code."/>
+<meta name="twitter:image" content="https://taxclarity.onrender.com/assets/og-image.png"/>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/css/statute.css"/>
+
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/"><span class="logo-mark">§</span>Tax<em>Clarity</em></a>
+    <div class="search-box">
+      <input id="nav-search" type="text" placeholder="Search the Code, forms, guides…" autocomplete="off" aria-label="Search TaxClarity"/>
+      <div class="search-results" id="nav-search-results"></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/guides.html" >Guides</a></li>
+      <li><a href="/calculator.html" >Calculator</a></li>
+      <li><a href="/glossary.html" >Glossary</a></li>
+      <li><a href="/about.html" >About</a></li>
+      <li><a href="/research.html" class="cta">Research →</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/guides.html">Guides</a>
+    <a href="/calculator.html">Draft Return Builder</a>
+    <a href="/research.html">AI Research &amp; Authorities</a>
+    <a href="/glossary.html">Glossary</a>
+    <a href="/about.html">About &amp; Contact</a>
+  </div>
+</nav>
+<section>
+  <div class="section-inner">
+    <div class="agent-wrap">
+      <div class="section-tag">AI Research Agent · Every citation linked</div>
+      <h2 class="section-title">Ask a tax research question</h2>
+      <p class="section-sub">Get a structured memo — issue, authority hierarchy, federal and multistate analysis, confidence score — where every cited section links to the primary source so you can verify it yourself.</p>
+
+      <div class="agent-input">
+        <div class="form-group" style="margin-bottom:10px">
+          <textarea class="form-input" id="ag-input" maxlength="2000" placeholder="e.g., Does a §754 election benefit a buyer of a 25% partnership interest when inside basis is below FMV?"></textarea>
+        </div>
+        <div class="agent-meta">
+          <span class="quota">Free · 20 questions/hour · ~30–60 seconds per memo</span>
+          <button class="btn btn-primary" id="ag-btn" onclick="runAgent()">Run research →</button>
+        </div>
+        <div class="samples">
+          <button onclick="setQ('When does a §754 election benefit the buyer of a partnership interest, and how is the §743(b) adjustment allocated?')">§754 / §743(b)</button>
+          <button onclick="setQ('Is an S corporation shareholder-employee salary of $40,000 with $200,000 of distributions defensible as reasonable compensation?')">S-corp reasonable comp</button>
+          <button onclick="setQ('How does the OBBBA $40,000 SALT cap phase down for a married couple with $600,000 MAGI in 2026, and do state PTE elections still work around it?')">SALT cap + PTE</button>
+          <button onclick="setQ('Does a nonresident F-1 student on OPT owe FICA, and which treaty articles typically exempt their wages?')">F-1 / FICA / treaty</button>
+        </div>
+      </div>
+
+      <div class="loading" id="ag-loading">
+        <div class="stage" id="ag-stage">Framing the issue…</div>
+        <div class="bar"><i></i></div>
+      </div>
+
+      <div id="memo-wrap"></div>
+
+      <div style="margin-top:22px">
+        <div class="section-tag" style="margin-bottom:8px">This session</div>
+        <div class="samples" id="ag-history"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg" id="authorities">
+  <div class="section-inner">
+    <div class="section-tag">Authority Directory</div>
+    <h2 class="section-title">The Code, mapped in plain English</h2>
+    <p class="section-sub">A curated directory of the Internal Revenue Code sections, regulations, forms, and publications that actually come up — each with a one-line translation and a direct link to the primary source. <span id="dir-count" style="font-family:var(--mono);font-size:13px;color:var(--ox)"></span></p>
+
+    <div class="dir-controls">
+      <button class="pill active" onclick="setDirFilter('all',this)">All</button>
+      <button class="pill" onclick="setDirFilter('irc',this)">IRC §§</button>
+      <button class="pill" onclick="setDirFilter('regs',this)">Regulations</button>
+      <button class="pill" onclick="setDirFilter('forms',this)">Forms</button>
+      <button class="pill" onclick="setDirFilter('pubs',this)">Publications</button>
+      <div class="search-box">
+        <input id="dir-search" type="text" placeholder="Filter… e.g. 754, basis, penalty" autocomplete="off" aria-label="Filter authorities"/>
+      </div>
+    </div>
+
+    <div class="dir-grid" id="dir-grid"><div class="sr-empty">Loading the directory…</div></div>
+
+    <div class="authority-note"><b>Sources</b><span>Statutes and regulations link to Cornell Law School's Legal Information Institute (26 U.S.C. / 26 C.F.R.); forms and publications link to IRS.gov. TaxClarity is independent and unaffiliated with either.</span></div>
+  </div>
+</section>
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">§ Tax<em>Clarity</em></div>
+      <p class="foot-tag">Taxes, finally made clear. Free, cited, and built by a practitioner.</p>
+      <form class="newsletter" id="nl-form" onsubmit="return subscribeNews(event,'nl-form','nl-msg')">
+        <input type="email" placeholder="you@email.com" required aria-label="Email for updates"/>
+        <button type="submit">Join</button>
+      </form>
+      <div class="form-msg" id="nl-msg"></div>
+    </div>
+    <div>
+      <h5>Learn</h5>
+      <a href="/guides.html#taxes">Individual taxes</a>
+      <a href="/guides.html#business">Business &amp; entities</a>
+      <a href="/guides.html#international">International students</a>
+      <a href="/glossary.html">Glossary</a>
+    </div>
+    <div>
+      <h5>Tools</h5>
+      <a href="/calculator.html">Draft Return Builder</a>
+      <a href="/research.html">AI Research Agent</a>
+      <a href="/research.html#authorities">Authority Directory</a>
+      <a href="/guides.html#downloads">Free templates</a>
+    </div>
+    <div>
+      <h5>Site</h5>
+      <a href="/about.html">About &amp; standards</a>
+      <a href="/about.html#contact">Contact</a>
+      <a href="/about.html#legal">Disclaimer &amp; privacy</a>
+    </div>
+  </div>
+  <div class="foot-legal">
+    <div class="foot-legal-inner">© 2026 TaxClarity · Educational information, not tax advice — see <a href="/about.html#legal" style="display:inline;padding:0">full disclaimer</a>. Figures per Rev. Proc. 2024-40 / 2025-32 as modified by OBBBA (P.L. 119-21). Content last reviewed July 2026. Statute &amp; regulation links courtesy of Cornell LII; forms via IRS.gov.</div>
+  </div>
+</footer>
+<script src="/js/site.js"></script><script src="/js/agent.js"></script>
+</body>
+</html>

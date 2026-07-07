@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
-Sitemap: https://clearfinance.onrender.com/sitemap.xml
+Sitemap: https://taxclarity.onrender.com/sitemap.xml
